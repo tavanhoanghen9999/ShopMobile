@@ -1,0 +1,9 @@
+C:\Luan Van\ShopMobile\ModelClassLibrary\bin\Debug\netcoreapp2.1\ModelClassLibrary.deps.json
+C:\Luan Van\ShopMobile\ModelClassLibrary\bin\Debug\netcoreapp2.1\ModelClassLibrary.dll
+C:\Luan Van\ShopMobile\ModelClassLibrary\bin\Debug\netcoreapp2.1\ModelClassLibrary.pdb
+C:\Luan Van\ShopMobile\ModelClassLibrary\obj\Debug\netcoreapp2.1\ModelClassLibrary.csprojAssemblyReference.cache
+C:\Luan Van\ShopMobile\ModelClassLibrary\obj\Debug\netcoreapp2.1\ModelClassLibrary.csproj.CoreCompileInputs.cache
+C:\Luan Van\ShopMobile\ModelClassLibrary\obj\Debug\netcoreapp2.1\ModelClassLibrary.AssemblyInfoInputs.cache
+C:\Luan Van\ShopMobile\ModelClassLibrary\obj\Debug\netcoreapp2.1\ModelClassLibrary.AssemblyInfo.cs
+C:\Luan Van\ShopMobile\ModelClassLibrary\obj\Debug\netcoreapp2.1\ModelClassLibrary.dll
+C:\Luan Van\ShopMobile\ModelClassLibrary\obj\Debug\netcoreapp2.1\ModelClassLibrary.pdb
