@@ -82,4 +82,6 @@ Create Table Users
 	roleid int,
 	foreign key(roleid) references Roles(roleid),
 )
---alter table Users add phonenumber nvarchar(10)
+alter table  Supplier add picture nvarchar(20)
+alter table  Customer add picture nvarchar(20)
+alter table  Product add discount bigint

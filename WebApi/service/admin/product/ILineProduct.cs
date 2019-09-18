@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace WebApi.service.product
 {
-
     public interface ILineProduct
     {
         IEnumerable<LineProduct> getAll();
@@ -14,6 +13,6 @@ namespace WebApi.service.product
         void update(LineProduct lineProduct);
         void delete(object id);
         LineProduct getById(object id);
-      
+       
     }
 }

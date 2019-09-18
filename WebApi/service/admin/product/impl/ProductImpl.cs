@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 using WebApi.data;
 using WebApi.responsitory.impl;
 
-namespace WebApi.service.product.impl
+namespace WebApi.service.admin.product.impl
 {
-
-    public class LineProductImpl : Responsitory<LineProduct>, ILineProduct
+    public class ProductImpl : Responsitory<Product>, IProduct
     {
-        public LineProductImpl(MyDbContext context) : base(context)
+        public ProductImpl(MyDbContext context) : base(context)
         {
         }
     }

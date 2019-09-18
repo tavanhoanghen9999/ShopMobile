@@ -13,8 +13,7 @@ namespace ModelClassLibrary.data.product
         public int lineid { get; set; }
         public string linename { get; set; }
         public string linenote { get; set; }
-        public string createday { get; set; }
+        public DateTime createday { get; set; }
         public string picture { get; set; }
-     
     }
 }

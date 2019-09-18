@@ -2,78 +2,69 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using ModelClassLibrary.data;
-using ModelClassLibrary.data.roles;
+using ModelClassLibrary.data.product;
 using ModelClassLibrary.respond;
-using WebApi.service.user;
+using WebApi.service.product;
 
-namespace WebApi.controllers.user
+namespace WebApi.controllers.admin.product
 {
-    [Authorize(Roles = Roles.Admin)]
-    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController : Controller
+    public class LineProductController : Controller
     {
-        private IUser m_user;
-        public UserController(IUser user)
+        public readonly ILineProduct m_lineProduct;
+        public LineProductController(ILineProduct lineProduct)
         {
-            m_user = user;
+            m_lineProduct = lineProduct;
         }
-        [HttpGet("get")]
-        public DataRespond get()  
+        [HttpGet]
+        public DataRespond get()
         {
             DataRespond data = new DataRespond();
             try
             {
                 data.success = true;
-                data.data = m_user.getAll();
-                data.messger = "success";
-    
-            }
-            catch(Exception e)
-            {
-                data.success = false;
-                data.error = e;
-                data.messger =e.Message;
-            }
+                m_lineProduct.getAll();
+                data.messger = "Success";
 
-            return data;
-
-        }
-        [HttpPost]
-        public DataRespond insert(Users user)
-        {
-            DataRespond data = new DataRespond();
-            try
-               {
-                data.success = true;
-                m_user.insert(user);
-                data.messger= "success";
-            }
-            catch(Exception e)
+            }catch(Exception e)
             {
                 data.success = false;
                 data.error = e;
                 data.messger = e.Message;
             }
-                return data;
-        }
-        [HttpPut]
-        public DataRespond update(Users user)
-        {
 
+            return data;
+        }
+        [HttpPost]
+        public DataRespond insert(LineProduct lineProduct)
+        {
             DataRespond data = new DataRespond();
             try
             {
                 data.success = true;
-                m_user.update(user);
-                data.messger = "Success";
+                m_lineProduct.insert(lineProduct);
+                data.messger = "Insert success";
 
+            }catch(Exception e)
+            {
+                data.success = false;
+                data.error = e;
+                data.messger = e.Message;
             }
-            catch (Exception e)
+            return data;
+        }
+        [HttpPut]
+        public DataRespond update(LineProduct lineProduct)
+        {
+            DataRespond data = new DataRespond();
+            try
+            {
+                data.success = true;
+                m_lineProduct.update(lineProduct);
+                data.messger = "Update success";
+            }catch(Exception e)
             {
                 data.success = false;
                 data.error = e;
@@ -88,17 +79,16 @@ namespace WebApi.controllers.user
             try
             {
                 data.success = true;
-                m_user.delete(id);
-                data.messger = "Success";
-
-            }
-            catch (Exception e)
+                m_lineProduct.delete(id);
+                data.messger = "Delete success";
+            }catch(Exception e)
             {
                 data.success = false;
                 data.error = e;
                 data.messger = e.Message;
             }
-            return data; 
+            return data;
         }
+
     }
 }

@@ -7,3 +7,6 @@ C:\Luan Van\ShopMobile\ModelClassLibrary\obj\Debug\netcoreapp2.1\ModelClassLibra
 C:\Luan Van\ShopMobile\ModelClassLibrary\obj\Debug\netcoreapp2.1\ModelClassLibrary.AssemblyInfo.cs
 C:\Luan Van\ShopMobile\ModelClassLibrary\obj\Debug\netcoreapp2.1\ModelClassLibrary.dll
 C:\Luan Van\ShopMobile\ModelClassLibrary\obj\Debug\netcoreapp2.1\ModelClassLibrary.pdb
+C:\Luan Van\ShopMobile\ModelClassLibrary\bin\Debug\netcoreapp2.1\Microsoft.AspNetCore.Http.Features.dll
+C:\Luan Van\ShopMobile\ModelClassLibrary\bin\Debug\netcoreapp2.1\Microsoft.AspNetCore.Http.Features.xml
+C:\Luan Van\ShopMobile\ModelClassLibrary\obj\Debug\netcoreapp2.1\ModelClassLibrary.csproj.CopyComplete
