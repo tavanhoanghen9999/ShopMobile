@@ -1,6 +1,6 @@
 Create Database DataMobile
 Use DataMobile
-Create Table LineProduct
+Create Table LineProducts
 (
 	lineid int Identity(1,1) PRIMARY key,
 	linename nvarchar(300),
@@ -8,7 +8,7 @@ Create Table LineProduct
 	createday datetime,
 	picture nvarchar(20) 
 )
-Create Table Supplier
+Create Table Suppliers
 (
 	supplierid int identity(1,1)primary key ,
 	suppliername nvarchar(100),
@@ -16,7 +16,7 @@ Create Table Supplier
 	phonenumber nvarchar(10),	
 )
 
-Create Table Product
+Create Table Products
 (
 	productid int Identity(1,1),
 	nameproduct nvarchar(300),
@@ -28,18 +28,10 @@ Create Table Product
 	lineid int,
 	supplierid int,
 	primary key(productid),
-    foreign key (lineid) references LineProduct(lineid),
-	foreign key (supplierid) references Supplier(supplierid),
+    foreign key (lineid) references LineProducts(lineid),
+	foreign key (supplierid) references Suppliers(supplierid),
 )
-Create Table Customer
-(
-	customerid int Identity(1,1),
-	namecustomer nvarchar(50),
-	phonenumber nvarchar(10),
-	email nvarchar(30),
-	address nvarchar(500),
-	primary key(customerid),
-) 
+
 Create Table Orders
 (
 	orderid int Identity(1,1),
@@ -51,10 +43,10 @@ Create Table Orders
 	sumprice bigint,
 	customerid int,
 	primary key(orderid),
-	foreign key(customerid) references Customer(customerid),
+	foreign key(customerid) references Customers(customerid),
 
 )
-Create Table DetailOrder
+Create Table DetailOrders
 (
 	detailorderid int identity(1,1),
 	total int,
@@ -64,8 +56,17 @@ Create Table DetailOrder
 	productid int,
 	primary key (detailorderid),
 	foreign key(orderid) references Orders(orderid),
-	foreign key(productid) references Product(productid),
+	foreign key(productid) references Products(productid),
 )
+ Create Table Customers
+(
+	customerid int Identity(1,1),
+	namecustomer nvarchar(50),
+	phonenumber nvarchar(10),
+	email nvarchar(30),
+	address nvarchar(500),
+	primary key(customerid),
+) 
 Create Table Roles
 (
 	roleid int identity(1,1) primary key,
@@ -82,6 +83,10 @@ Create Table Users
 	roleid int,
 	foreign key(roleid) references Roles(roleid),
 )
-alter table  Supplier add picture nvarchar(20)
-alter table  Customer add picture nvarchar(20)
-alter table  Product add discount bigint
+alter table  Suppliers add picture nvarchar(20)
+alter table  Customers add picture nvarchar(20)
+alter table  Products add discount bigint
+
+
+
+SELECT GETDATE()

@@ -24,14 +24,15 @@ using WebApi.service.admin.order;
 using WebApi.service.admin.order.impl;
 using WebApi.service.admin.product;
 using WebApi.service.admin.product.impl;
+using WebApi.service.admin.supplier;
+using WebApi.service.admin.supplier.impl;
 using WebApi.service.auth;
 using WebApi.service.auth.impl;
 using WebApi.service.img;
 using WebApi.service.img.impl;
 using WebApi.service.product;
 using WebApi.service.product.impl;
-using WebApi.service.supplier;
-using WebApi.service.supplier.impl;
+
 using WebApi.service.user;
 using WebApi.service.user.impl;
 
@@ -90,7 +91,7 @@ namespace WebApi
             services.AddScoped<ILineProduct, LineProductImpl>();// khai bao service
             services.AddScoped<IProduct, ProductImpl>();// khai bao service
             services.AddScoped<ICustomer, CustomerImpl>();// khai bao service
-            services.AddScoped<ISupplier, SupplierIimpl>();// khai bao service
+            services.AddScoped<ISupplier, SupplierImpl>();// khai bao service
             services.AddScoped<IOrder, OrderImpl>();// khai bao service
             services.AddScoped<IDetailOrder, DetailOrderImpl>();// khai bao service
             services.AddTransient<IImage, ImgImpl>();// khai bao service

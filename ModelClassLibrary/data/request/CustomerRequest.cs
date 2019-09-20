@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ModelClassLibrary.data.request
 {
-    public class Customer
+    public class CustomerRequest
     {
         public int customerid { get; set; }
         public string namecustomer { get; set; }

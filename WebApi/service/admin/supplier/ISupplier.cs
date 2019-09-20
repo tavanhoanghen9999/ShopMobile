@@ -1,17 +1,17 @@
-﻿using ModelClassLibrary.data.supplier;
+﻿using ModelClassLibrary.data.request;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebApi.service.supplier
+namespace WebApi.service.admin.supplier
 {
     public interface ISupplier
     {
-        IEnumerable<Supplier> getAll();
-        void insert(Supplier supplier);
-        void update(Supplier supplier);
+        IEnumerable<SupplierRequest> getAll();
+        void insert(SupplierRequest supplier);
+        void update(SupplierRequest supplier);
         void delete(object id);
-        Supplier getById(object id);
+        SupplierRequest getById(object id);
     }
 }

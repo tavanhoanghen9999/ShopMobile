@@ -4,8 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ModelClassLibrary.data.customer;
+using ModelClassLibrary.data.request;
 using ModelClassLibrary.respond;
 using WebApi.service.admin.customer;
+using WebApi.service.img;
 
 namespace WebApi.controllers.admin.customer
 {
@@ -14,10 +16,14 @@ namespace WebApi.controllers.admin.customer
     public class CustomerController : Controller
     {
         private ICustomer m_customer;
-        public CustomerController(ICustomer customer)
+        private IImage m_image;
+        public CustomerController(ICustomer customer,IImage image)
         {
             m_customer = customer;
+            m_image = image;
         }
+       
+
         [HttpGet]
         public DataRespond get()
         {
@@ -91,8 +97,24 @@ namespace WebApi.controllers.admin.customer
             }
             return data;
         }
+        [HttpPost]
+        public async Task<string> upfileAsync([FromForm] CustomerRequest file)
+        {
+            Customer customer = new Customer();
+            try
+            {
+                customer.namecustomer = file.namecustomer;
+                customer.phonenumber = file.phonenumber;
+                customer.email = file.email;
+                customer.address = file.address;
+                customer.picture = await m_image.uploadFile(file.picture);
+            }
+            catch (Exception e)
+            {
+                customer.namecustomer = e.Message;
+            }
+            return "update khong thanh chong";
+        }
 
-
-          
     }
 }

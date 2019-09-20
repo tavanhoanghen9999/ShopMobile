@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ModelClassLibrary.data.request
 {
-    public class LineProduct
+    public class LineProductRequest
     {
         public int lineid { get; set; }
         public string linename { get; set; }

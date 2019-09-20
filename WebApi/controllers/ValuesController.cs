@@ -47,26 +47,7 @@ namespace WebApi.Controllers
 
         // DELETE api/values/5
         //[HttpDelete("{id}")]
-        [HttpPost("Post")]
-        public async Task<string> upfileAsync([FromForm] ProductRequest file)
-        {
-            Product pr = new Product();
-            try
-            {
-                pr.nameproduct = file.nameproduct;
-                pr.createday = file.createday;
-                pr.note = file.note;
-                pr.price = file.price;
-                pr.total = file.total;
-                pr.productid = file.productid;
-                pr.supplierid = file.supplierid;
-                pr.picture = await m_image.uploadFile(file.picture);//
-            }catch(Exception e)
-            {
-                
-            }
-            return "update khong thanh chong";
-        }
+        
 
     }
 

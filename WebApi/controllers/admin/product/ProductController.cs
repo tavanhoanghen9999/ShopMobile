@@ -4,8 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ModelClassLibrary.data.product;
+using ModelClassLibrary.data.request;
 using ModelClassLibrary.respond;
 using WebApi.service.admin.product;
+using WebApi.service.img;
 
 namespace WebApi.controllers.admin.product
 {
@@ -14,9 +16,32 @@ namespace WebApi.controllers.admin.product
     public class ProductController : Controller
     {
         private IProduct m_product;
-        public ProductController(IProduct product)
+        private IImage m_image;
+        public ProductController(IProduct product, IImage image)
         {
             m_product = product;
+            m_image = image;
+        }
+        [HttpPost]
+        public async Task<string> upfileAsync([FromForm] ProductRequest file)
+        {
+            Product pr = new Product();
+            try
+            {
+                pr.nameproduct = file.nameproduct;
+                pr.createday = file.createday;
+                pr.note = file.note;
+                pr.price = file.price;
+                pr.total = file.total;
+                pr.productid = file.productid;
+                pr.supplierid = file.supplierid;
+                pr.picture = await m_image.uploadFile(file.picture);//
+            }
+            catch (Exception e)
+            {
+                pr.picture = e.Message;
+            }
+            return "update khong thanh chong";
         }
         [HttpGet]
         public DataRespond get()
