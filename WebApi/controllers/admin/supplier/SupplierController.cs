@@ -34,8 +34,8 @@ namespace WebApi.controllers.admin.supplier
                 supplier.phonenumber = file.phonenumber;
                 supplier.address = file.address;
                 supplier.email = file.email;
+                supplier.activity=file.activity == 0 ? true : false;
                 supplier.createday = DateTime.ParseExact(file.createday, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-
                 supplier.picture = await m_image.uploadFile(file.picture);
             }
             catch (Exception e)
@@ -65,7 +65,30 @@ namespace WebApi.controllers.admin.supplier
 
             return data;
         }
-        [HttpPost]
+        //lấy id sản phẩm
+        [HttpGet("getbyid")]
+        public DataRespond getById(int id)
+        {
+            DataRespond data = new DataRespond();
+            try
+            {
+                data.success = true;
+                data.data = m_supplier.getById(id);
+                data.messger = "success";
+
+
+            }
+            catch (Exception e)
+            {
+                data.success = false;
+                data.error = e;
+                data.messger = e.Message;
+            }
+            return data;
+        }
+
+
+        [HttpPost("insertsupplier")]
         public async Task<DataRespond> insertAsync([FromForm]SupplierRequest supplier)
         {
             DataRespond data = new DataRespond();
@@ -74,9 +97,11 @@ namespace WebApi.controllers.admin.supplier
                 Supplier s = new Supplier();
                 s.suppliername = supplier.suppliername;
                 s.phonenumber = supplier.phonenumber;
+                s.address = supplier.address;
                 s.email = supplier.email;
-                DateTime createday = DateTime.ParseExact(supplier.createday, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                s.createday = createday;//2019-12-10
+                s.activity = supplier.activity == 0 ? true : false;
+                DateTime creday = DateTime.ParseExact(supplier.createday, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                s.createday = creday;//2019-12-10
                 s.picture = await m_image.uploadFile(supplier.picture);
                 data.success = true;
                 m_supplier.insert(s);
@@ -92,13 +117,26 @@ namespace WebApi.controllers.admin.supplier
             return data;
         }
         [HttpPut]
-        public DataRespond update(Supplier supplier)
+        public async Task<DataRespond> updateAsync([FromForm]SupplierRequest supplier)
         {
             DataRespond data = new DataRespond();
             try
             {
+                Supplier s = m_supplier.getById(supplier.supplierid);
+                s.suppliername = supplier.suppliername;
+                s.phonenumber = supplier.phonenumber;
+                s.address = supplier.address;
+                s.email = supplier.email;
+                s.activity = supplier.activity == 0 ? true : false;
+                DateTime creday = DateTime.ParseExact(supplier.createday, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                s.createday = creday;//2019-12-10
+                if (s.picture != null)
+                {
+                    m_image.deleteFile(s.picture);
+                    s.picture = await m_image.uploadFile(supplier.picture);
+                }
                 data.success = true;
-                m_supplier.update(supplier);
+                m_supplier.update(s);
                 data.messger = "Update success";
 
             }

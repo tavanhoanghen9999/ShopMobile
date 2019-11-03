@@ -12,7 +12,7 @@
 
     <span class="h title-supplier">
         TRANG CẬP NHẬT LOẠI SẢN PHẦM
-        <span class="h bnt-add-supplier" data-toggle="modal" data-target="#insert-linepr">+ Thêm mới</span>
+        <span class="h bnt-add-supplier" data-toggle="modal" data-target="#insert-supplier">+ Thêm mới</span>
     </span>
     <div class="h table-supplier" id="item-supplier">
         <div class="h head-table">
@@ -39,7 +39,7 @@
             </div>*@
     </div>
     @*add line product*@
-    <div class="modal fade" id="insert-linepr" role="dialog">
+    <div class="modal fade" id="insert-supplier" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -61,7 +61,7 @@
                         <input class="h insert-pr-input" id="txtnumberphone" type="number" />
                     </div>
                     <div class="h dl-sm-it">
-                        <span class="h insert-supplier">Địa chỉ: </span>
+                        <span class="h insert-supplier">Email: </span>
                         <input class="h insert-pr-input" id="txtemail" type="email" />
                     </div>
 
@@ -80,7 +80,7 @@
                     <div class="h dl-sm-it">
                         <span class="h insert-supplier">Trạng thái: </span>
 
-                        <select name="selector1" id="txtsuplierid" class="h insert-prduct-select ">
+                        <select name="selector1" id="sl-ativity-edit" class="h insert-prduct-select ">
                             <option value="0">Còn hoạt động</option>
                             <option value="1">Ngừng hoạt động</option>
                        
@@ -99,7 +99,7 @@
                     <button type="button" class="k btn btn-default" data-dismiss="modal">
                         Đóng
                     </button>
-                    <span type="button" class="h btn-insert" onclick="insertLineProduct()">
+                    <span type="button" class="h btn-insert" onclick="insertsupplier()">
                         <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
                         Cập nhật
                     </span>
@@ -115,22 +115,31 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Cập nhật loại sản phẩm</h4>
+                    <h4 class="modal-title">Cập nhật hãng</h4>
                 </div>
                 <div class="h modal-body">
                     <div class="h dl-sm-it">
-                        <span class="h insert-pr">Tên Loại: </span>
-                        <input class="h insert-pr-input" id="txtlinename-edit" type="text" />
+                        <span class="h insert-supplier">Tên hãng: </span>
+                        <input class="h insert-pr-input" id="txtsuppliername-edit" type="text" />
                     </div>
                     <div class="h dl-sm-it">
-                        <span class="h insert-pr">Ghi Chú: </span>
-                        <textarea class="h insert-pr-input" id="txtnote-edit" type="text"> </textarea>
+                        <span class="h insert-supplier">Địa chỉ: </span>
+                        <input class="h insert-pr-input" id="txtaddress-edit" type="text" />
+                    </div>
+                    <div class="h dl-sm-it">
+                        <span class="h insert-supplier">SDT: </span>
+                        <input class="h insert-pr-input" id="txtnumberphone-edit" type="number" />
+                    </div>
+                    <div class="h dl-sm-it">
+                        <span class="h insert-supplier">Email: </span>
+                        <input class="h insert-pr-input" id="txtemail-edit" type="email" />
                     </div>
 
+
                     <div class="k dl-sm-it">
-                        <span class="h insert-pr">Ngày thành lập: </span>
+                        <span class="h insert-supplier" id="sl-db-active">Ngày tạo: </span>
                         <div class="form-group">
-                            <div class='input-group date' id='datepicker-lineupdate'>
+                            <div class='input-group date' id='datepicker-linecrday'>
                                 <input type='text' class="form-control" id="txtcreateday-edit" />
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
@@ -139,8 +148,18 @@
                         </div>
                     </div>
                     <div class="h dl-sm-it">
-                        <span class="h insert-pr">Anh: </span>
-                        <input class="h insert-pr-input" id="txtpicture-edit" type="file" />
+                        <span class="h insert-supplier">Trạng thái: </span>
+
+                        <select name="selector1" id="sl-ativity-edit" class="h insert-prduct-select ">
+                            <option value="0">Còn hoạt động</option>
+                            <option value="1">Ngừng hoạt động</option>
+
+                        </select>
+                    </div>
+
+                    <div class="h dl-sm-it">
+                        <span class="h insert-supplier">Anh: </span>
+                        <input class="h insert-pr-input" id="txtpicture" type="file" />
 
                     </div>
 
@@ -150,7 +169,7 @@
                     <button type="button" class="k btn btn-default" data-dismiss="modal">
                         Đóng
                     </button>
-                    <span type="button" class="h btn-insert" onclick="updateLineProduct()">
+                    <span type="button" class="h btn-insert" onclick="updatesupplier()">
                         <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
                         Cập nhật
                     </span>

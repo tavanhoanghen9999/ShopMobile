@@ -1,6 +1,11 @@
-﻿var activity = 0;
+﻿
 getcustomer();
 var formData = new FormData();
+var activity = 0;
+
+$('#sl-ativity-cs').on('change', function () {
+    activity = parseInt(this.value);
+})
 // brower picture
 $("#txtpicture").change(function () {
     readImageUpload(this);
@@ -71,74 +76,34 @@ $('#sl-activity-cus').on('change', function () {
 /// insert customer
 
 function insertcustomer() {
-    var bol = true;
-    var data = {
-        'namecustomer': $("#txtlinename").val(),
-        'phonenumber': $("#txtnumberphone").val(),
-        'email': $("#txtemail").val(),
-        'address': $("#txtaddress").val(),
-        'activity': 0
-    };
-    if (bol) {
-        bol = false;
+    formData.append("namecustomer", $("#txtnamecustomer").val());
+    formData.append("phonenumber", $("#txtnumberphone").val());
+    formData.append("email", $("#txtemail").val());
+    formData.append("address", $("#txtaddress").val());
+    formData.append("createday", $("#txtcreateday").val());
 
-        $.ajax({
-            url: linkserver + "lineproduct/insertcustomer",
-            type: 'post',
-            dataType: 'json',
-            async: false,
-            data: formData,
-            //headers: { 'authorization': `Bearer ${token}` },
-            processData: false,
-            contentType: false,
-            cache: false,
-            error: function (err) {
-                alert("That bai");
-            },
-            success: function (data) {
-                if (data.success) {
-                    $('#insert-customer').modal('toggle');
-                    bootbox.alert("Thêm khhách thành công");
-                    getcustomer();
-                }
-                else {
-                    alert("Có lỗi xảy ra vui lòng kiểm tra lại thông tin !");
-                }
+    $.ajax({
+        url: linkserver + "customer/insertcustomer",
+        type: 'post',
+        dataType: 'json',
+        async: false,
+        data: formData,
+        //headers: { 'authorization': `Bearer ${token}` },
+        processData: false,
+        contentType: false,
+        cache: false,
+        error: function (err) {
+            alert("That bai");
+        },
+        success: function (data) {
+            if (data.success) {
+                $('#insert-customer').modal('toggle');
+                bootbox.alert("Thêm thành công");
+                getcustomer();
             }
-        });
-    }
+            else {
+                alert("Có lỗi xảy ra vui lòng kiểm tra lại thông tin !");
+            }
+        }
+    });
 }
-
-        
-
-//    formData.append("namecustomer", $("#txtlinename").val());
-//    formData.append("phonenumber", $("#txtnumberphone").val());
-//    formData.append("email", $("#txtemail").val());
-//    formData.append("address", $("#txtaddress").val());
-//    formData.append("activity", $("#txtactivity").val());
-
-//    $.ajax({
-//        url: linkserver + "lineproduct/insertcustomer",
-//        type: 'post',
-//        dataType: 'json',
-//        async: false,
-//        data: formData,
-//        //headers: { 'authorization': `Bearer ${token}` },
-//        processData: false,
-//        contentType: false,
-//        cache: false,
-//        error: function (err) {
-//            alert("That bai");
-//        },
-//        success: function (data) {
-//            if (data.success) {
-//                $('#insert-customer').modal('toggle');
-//                bootbox.alert("Thêm thành công");
-//                getcustomer();
-//            }
-//            else {
-//                alert("Có lỗi xảy ra vui lòng kiểm tra lại thông tin !");
-//            }
-//        }
-//    });
-//}
