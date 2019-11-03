@@ -1,0 +1,117 @@
+﻿
+@import url('ad_config.css');
+
+:root {
+}
+@media only screen and (min-width:0px) {
+    .main-form-product {
+        width: 100%;
+        height: auto;
+    }
+
+    .title-product {
+        width: 100%;
+        padding: 10px;
+       
+        background-color: rgba(51,51,51,0.1);
+        color: var(--color-main);
+    }
+
+    .table-product {
+        width: 100%;
+        border: 1px solid rgba(51,51,51,0.1);
+    }
+    .body-table-product {
+       width:100%;
+        border: 1px solid rgba(51,51,51,0.1);
+       
+    }
+    .body-table-product-from {
+        width: 100%;
+        border: 1px solid rgba(51,51,51,0.1);
+        margin-top: 20px;
+    }
+
+    .head-table-product {
+        width: 100%;
+        background-color: rgba(51,51,51,0.1);
+    }
+
+    .body-table {
+        width: 100%;
+        border: 1px solid rgba(51,51,51,0.1);
+    }
+
+    .item-table-product {
+        width: 9.09090909%;
+        padding: 5px;
+        border-right: 1px solid rgba(51,51,51,0.1);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 80px;
+    }
+
+    .bnt-add-product {
+        width: auto;
+        border: 1px solid rgba(51,51,51,0.1);
+        background-color: var(--color-button);
+        padding: 5px;
+        border-radius: 4px;
+        float: right;
+        cursor: pointer;
+    }
+
+    .icon-table {
+        font-size: 18px;
+        border: 1px solid rgba(51,51,51,0.1);
+        padding: 3px 5px;
+        cursor: pointer;
+        border-radius: 4px;
+        
+    }
+    .bnt-add-product:hover{
+        background-color:yellow;
+    }
+
+    .icon-table:hover {
+        background-color: yellow;
+    }
+    .modal-body-product {
+        width: 100%;
+        background-color: rgba(51,51,51,0.1);
+    }
+    .dl-sm-it {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    .insert-prduct {
+        width: 15%;
+        padding:10px;
+    }
+    .insert-pr-input {
+        width: 80%;
+        cursor: pointer;
+        border-radius: 5px;
+        border: 1px solid rgba(51,51,51,0.1);
+        padding: 10px;
+        margin-right:5px;
+
+    }
+     .btn-insert {
+        width: auto;
+        cursor: pointer;
+        border-radius: 5px;
+        border: 1px solid rgba(51,51,51,0.1);
+        float:right;
+        margin-left:10px;
+        height:33px;
+        text-align:center;
+        padding:5px;
+    }
+    .insert-prduct-select {
+        width: 29%;
+        height: 33px;
+    }
+
+}

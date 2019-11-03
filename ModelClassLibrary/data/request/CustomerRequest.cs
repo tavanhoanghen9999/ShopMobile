@@ -9,9 +9,10 @@ namespace ModelClassLibrary.data.request
     {
         public int customerid { get; set; }
         public string namecustomer { get; set; }
-        public int phonenumber { get; set; }
+        public string phonenumber { get; set; }
         public string email { get; set; }
         public string address { get; set; }
         public IFormFile picture { get; set; }
+        public int activity { get; set; }
     }
 }

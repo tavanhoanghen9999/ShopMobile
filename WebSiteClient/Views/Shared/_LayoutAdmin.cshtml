@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/bootstrap/fonts/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="~/fonts/fonts-roboto.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/bootstrap/dist/css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" type="text/css" href="~/css/admin/ad_layout.css">
+    @RenderSection("Css", required: false)
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="header">
+           
+        </div>
+        <div class="h left-from">
+            <a href="/admin">
+                <span class="h main-text">
+                    <i class="fa fa-home icon-main" aria-hidden="true"></i>
+                    Trang chu
+                </span>
+            </a>
+            <a href="/admin/LineProduct"><span class="h main-text">
+                <i class="fa fa-list" aria-hidden="true"></i>
+                Quản lý loại
+                 </span>
+            </a>
+            <a href="/admin/Product"><span class="h main-text"> <i class="fa fa-list" aria-hidden="true"></i> Quản lý sản phẩm</span></a>
+            <a href="/admin/Customer"><span class="h main-text"> <i class="fa fa-list" aria-hidden="true"></i> Quản Lý khách hàng</span></a>
+            <a href="/admin/Supplier"><span class="h main-text"> <i class="fa fa-list" aria-hidden="true"></i> Quản Lý nhà cung cấp</span></a>
+            <a href="#"><span class="h main-text"> <i class="fa fa-list" aria-hidden="true"></i> Quản Lý đơn hàng</span></a>
+</div>
+        <div class="h right-form">
+            @RenderBody()
+        </div>
+        <div class="footer">
+
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/v3.14/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/lib/jquery/moment.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap-datetimepicker.js"></script>
+    <script src="~/lib/bootbox/bootbox.min.js"></script>
+
+    <script src="~/js/admin/adconfig.js"></script>
+    @RenderSection("Script", required: false)
+</body>
+</html>

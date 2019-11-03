@@ -10,7 +10,10 @@ namespace ModelClassLibrary.data.request
         public int supplierid { get; set; }
         public string suppliername { get; set; }
         public string address { get; set; }
-        public int phonenumber { get; set; }
+        public string phonenumber { get; set; }
+        public string email { get; set; }
+        public string createday { get; set; }
         public IFormFile picture { get; set; }
+        public int  activity { get; set; }
     }
 }

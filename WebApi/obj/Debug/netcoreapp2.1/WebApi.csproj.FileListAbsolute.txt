@@ -3,6 +3,8 @@ C:\Luan Van\ShopMobile\WebApi\bin\Debug\netcoreapp2.1\WebApi.runtimeconfig.json
 C:\Luan Van\ShopMobile\WebApi\bin\Debug\netcoreapp2.1\WebApi.runtimeconfig.dev.json
 C:\Luan Van\ShopMobile\WebApi\bin\Debug\netcoreapp2.1\WebApi.dll
 C:\Luan Van\ShopMobile\WebApi\bin\Debug\netcoreapp2.1\WebApi.pdb
+C:\Luan Van\ShopMobile\WebApi\bin\Debug\netcoreapp2.1\ModelClassLibrary.dll
+C:\Luan Van\ShopMobile\WebApi\bin\Debug\netcoreapp2.1\ModelClassLibrary.pdb
 C:\Luan Van\ShopMobile\WebApi\obj\Debug\netcoreapp2.1\WebApi.csprojAssemblyReference.cache
 C:\Luan Van\ShopMobile\WebApi\obj\Debug\netcoreapp2.1\WebApi.csproj.CoreCompileInputs.cache
 C:\Luan Van\ShopMobile\WebApi\obj\Debug\netcoreapp2.1\WebApi.RazorAssemblyInfo.cache
@@ -10,8 +12,6 @@ C:\Luan Van\ShopMobile\WebApi\obj\Debug\netcoreapp2.1\WebApi.RazorAssemblyInfo.c
 C:\Luan Van\ShopMobile\WebApi\obj\Debug\netcoreapp2.1\WebApi.AssemblyInfoInputs.cache
 C:\Luan Van\ShopMobile\WebApi\obj\Debug\netcoreapp2.1\WebApi.AssemblyInfo.cs
 C:\Luan Van\ShopMobile\WebApi\obj\Debug\netcoreapp2.1\WebApi.RazorTargetAssemblyInfo.cache
+C:\Luan Van\ShopMobile\WebApi\obj\Debug\netcoreapp2.1\WebApi.csproj.CopyComplete
 C:\Luan Van\ShopMobile\WebApi\obj\Debug\netcoreapp2.1\WebApi.dll
 C:\Luan Van\ShopMobile\WebApi\obj\Debug\netcoreapp2.1\WebApi.pdb
-C:\Luan Van\ShopMobile\WebApi\bin\Debug\netcoreapp2.1\ModelClassLibrary.dll
-C:\Luan Van\ShopMobile\WebApi\bin\Debug\netcoreapp2.1\ModelClassLibrary.pdb
-C:\Luan Van\ShopMobile\WebApi\obj\Debug\netcoreapp2.1\WebApi.csproj.CopyComplete

@@ -1,0 +1,153 @@
+﻿
+@{
+    ViewData["Title"] = "Product";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@section Css{
+
+    <link href="~/css/admin/adproduct.css" rel="stylesheet" />
+}
+    <div class="h main-form">
+        <span class="h title-product">
+            TRANG QUẢN LÝ SẢN PHẨM
+            <span class="h bnt-add-product" data-toggle="modal" data-target="#insert-product">+ Thêm mới</span>
+        </span>
+
+        @*hien thi product*@
+        <div class="h body-table-product-from" id="item-product">
+            <div class="h head-table-product">
+                <span class="h item-table-product">Ảnh</span>
+                <span class="h item-table-product">Mã sp</span>
+                <span class="h item-table-product">Tên sp</span>
+                <span class="h item-table-product">Ghi chú</span>
+                <span class="h item-table-product">Ngày tạo</span>
+                <span class="h item-table-product">Số lượng</span>
+                <span class="h item-table-product">Gía giảm</span>
+                <span class="h item-table-product">Mã loại</span>
+                <span class="h item-table-product">Mã hãng</span>
+                <span class="h item-table-product">Trang thái</span>
+                <span class="h item-table-product">Chức năng</span>
+            </div>
+           
+
+            @*<div class="h body-table-product">
+                <span class="h item-table-product">Ảnh</span>
+                <span class="h item-table-product">Mã sp</span>
+                <span class="h item-table-product">Tên sp</span>
+                <span class="h item-table-product">Ghi chú</span>
+                <span class="h item-table-product">Ngày tạo</span>
+                <span class="h item-table-product">Số lượng</span>
+                <span class="h item-table-product">Gía giảm</span>
+                <span class="h item-table-product">Mã loại</span>
+                <span class="h item-table-product">Mã hãng</span>
+                <span class="h item-table-product">Trang thái</span>
+                <span class="h item-table-product">Chức năng</span>
+            </div>*@
+        </div>
+
+        @*Thêm product*@
+        <div class="modal fade" id="insert-product" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Thêm sản phẩm</h4>
+                    </div>
+                    <div class="h modal-body-product">
+                        <div class="h dl-sm-it">
+                            <span class="h insert-prduct">Tên Loại: </span>
+                            <input class="h insert-pr-input" id="txtlinename" type="text" />
+                        </div>
+                        <div class="h dl-sm-it">
+                            <span class="h insert-prduct">Ghi Chú: </span>
+                            <textarea class="h insert-pr-input" id="txtnote" type="text"> </textarea>
+                        </div>
+                        <div class="k dl-sm-it">
+                            <span class="h insert-prduct" id="sl-db-active">Ngày tạo: </span>
+                            <div class="form-group">
+                                <div class='input-group date' id='datepicker-linecrday'>
+                                    <input type='text' class="form-control" id="txtcreateday" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="h dl-sm-it">
+                            <span class="h insert-prduct">Số lượng: </span>
+                            <input class="h insert-pr-input" id="txttotal" type="text" />
+                        </div>
+                        <div class="h dl-sm-it">
+                            <span class="h insert-prduct">Gía : </span>
+                            <input class="h insert-pr-input" id="txtprice" type="text" />
+                        </div>
+                        <div class="h dl-sm-it">
+                            <span class="h insert-prduct">Gía giảm: </span>
+                            <input class="h insert-pr-input" id="txtdiscount" type="text" />
+                        </div>
+                        <div class="h dl-sm-it">
+                            <span class="h insert-prduct">Mã loại: </span>
+
+                            <select name="selector1" id="select-linepr" class="h insert-prduct-select ">
+                                @*<option value="1">Điện thoại</option>
+                <option value="2">Máy tính</option>
+                <option value="3">Đồng hồ</option>
+                <option value="4">tablet</option>
+                <option value="5">Phụ kiện</option>*@
+                            </select>
+                        </div>
+                        <div class="h dl-sm-it">
+                            <span class="h insert-prduct">Mã hãng: </span>
+
+                            <select name="selector1" id="select-supplier" class="h insert-prduct-select ">
+                                @*<option value="1">Samsung </option>
+                                <option value="2">Iphone</option>
+                                <option value="3">Đồng hồ</option>
+                                <option value="4">tablet</option>
+                                <option value="5">Xiaomi</option>*@
+                            </select>
+                        </div>
+                        <div class="h dl-sm-it">
+                            <span class="h insert-prduct">Trạng thái: </span>
+
+                            <select name="selector1" id="txtsuplierid" class="h insert-prduct-select ">
+                                <option value="0">Còn hàng</option>
+                                <option value="1">Hết hàng</option>
+                                <option value="2">Hàng mới</option>
+                            </select>
+                        </div>
+
+                        <div class="h dl-sm-it">
+                            <span class="h insert-prduct">Anh: </span>
+                            <input class="h insert-pr-input" id="txtpicture" type="file" />
+
+                        </div>
+
+                        @*<span class="k dl-bnt-save" onclick="updateChiBo()">Cập nhật</span>*@
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="k btn btn-default" data-dismiss="modal">
+                            Đóng
+                        </button>
+                        <span type="button" class="h btn-insert" onclick="insertLineProduct()">
+                            <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                            Cập nhật
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+                   
+
+
+        @section Script{
+
+            <script src="~/js/admin/adProduct.js"></script>
+        }
+

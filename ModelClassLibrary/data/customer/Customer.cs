@@ -12,9 +12,10 @@ namespace ModelClassLibrary.data.customer
         [Key]
         public int customerid { get; set; }
         public string namecustomer { get; set; }
-        public int phonenumber { get; set; }
+        public string phonenumber { get; set; }
         public string email { get; set; }
         public string address { get; set; }
         public string picture { get; set; }
+        public bool activity { get; set; }
     }
 }

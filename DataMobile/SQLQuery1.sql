@@ -13,7 +13,8 @@ Create Table Suppliers
 	supplierid int identity(1,1)primary key ,
 	suppliername nvarchar(100),
 	address nvarchar(500),
-	phonenumber nvarchar(10),	
+	phonenumber nvarchar(10),
+	picture nvarchar(20),	
 )
 
 Create Table Products
@@ -26,6 +27,7 @@ Create Table Products
 	price bigint,
 	createday Datetime,
 	lineid int,
+	discount bigint,
 	supplierid int,
 	primary key(productid),
     foreign key (lineid) references LineProducts(lineid),
@@ -66,6 +68,8 @@ Create Table DetailOrders
 	email nvarchar(30),
 	address nvarchar(500),
 	primary key(customerid),
+	picture nvarchar(20),
+
 ) 
 Create Table Roles
 (
@@ -83,9 +87,14 @@ Create Table Users
 	roleid int,
 	foreign key(roleid) references Roles(roleid),
 )
-alter table  Suppliers add picture nvarchar(20)
-alter table  Customers add picture nvarchar(20)
-alter table  Products add discount bigint
+
+alter table  Suppliers add email nvarchar(50)
+ alter table  Suppliers add activity bit
+alter table  Suppliers add createday Datetime
+
+alter table  Customers add activity bit
+
+alter table  Products add activity big
 
 
 

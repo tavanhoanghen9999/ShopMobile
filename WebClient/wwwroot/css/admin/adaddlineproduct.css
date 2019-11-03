@@ -1,0 +1,58 @@
+﻿@import url("adconfig.css");
+:root{
+    --color-button:green;
+}
+@media only screen and (min-width:0){
+    .main-form{
+        width:100%;
+    }
+    .text-add-line{
+        width:100%;
+        border:1px solid rgba(51,51,51,0.1);
+        padding:5px;
+    }
+    .form-edit{
+        width:100%;
+        border:1px solid rgba(51,51,51,0.1);
+        border-radius:4px;
+        margin-top:5px;
+        padding:10px;
+    }
+    .row-form{
+        width:100%;
+        margin-bottom:10px;
+    }
+    .left-form {
+        width: 30%;
+    }
+    .right-form {
+        width: 70%;
+        border:1px solid rgba(51,51,51,0.1);
+        border-radius:4px;
+        padding:5px;
+    }
+    .img-line {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 160px;
+        height: 110px;
+        text-align: center;
+    }
+    .bnt-add-picture {
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        right: 0;
+        width: 60px;
+        margin: auto;
+        border: 1px dashed rgba(210, 181, 35, 0.66);
+        color:var(--color-button);
+        padding: 3px 5px;
+        border-radius: 4px;
+        cursor:pointer;
+    }
+  
+}
+@media only screen and (min-width:1200px) {
+}

@@ -94,8 +94,10 @@ namespace WebApi
             services.AddScoped<ISupplier, SupplierImpl>();// khai bao service
             services.AddScoped<IOrder, OrderImpl>();// khai bao service
             services.AddScoped<IDetailOrder, DetailOrderImpl>();// khai bao service
-            services.AddTransient<IImage, ImgImpl>();// khai bao service
- 
+           services.AddTransient<IImage, ImgImpl>();// khai bao service
+    
+
+
         }
 
 
@@ -110,6 +112,11 @@ namespace WebApi
             {
                 app.UseHsts();
             }
+            app.UseCors(builder => builder
+                                    .AllowAnyOrigin()
+                                    .AllowAnyMethod()
+                                    .AllowAnyHeader()
+                                    .AllowCredentials());
             app.UseAuthentication();
             app.UseHttpsRedirection();
             app.UseStaticFiles();

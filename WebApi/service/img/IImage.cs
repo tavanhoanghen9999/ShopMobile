@@ -9,6 +9,12 @@ namespace WebApi.service.img
     public interface IImage
     {
          Task<string> uploadFile(IFormFile file);
+         Task<string> uploadFilelineproduct(IFormFile file);
+         Task<string> uploadFileproduct(IFormFile file);
+         Task<string> uploadFilecustomer(IFormFile file);
+         Task<string> uploadFilesupplier(IFormFile file);
         void deleteFile(string file);
+        Task<string> uploadFile(string picture);
+
     }
 }

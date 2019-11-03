@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <environment>
+
+        <title>Matrix Template - The Ultimate Multipurpose admin template</title>
+
+  
+        <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+        <link href="~/css/admin/style.css" rel='stylesheet' type='text/css' />
+
+        <link rel="stylesheet" href="~/css/admin/morris.css" type="text/css" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css' />
+        <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+
+
+    </environment>
+      @RenderSection("css", required: false)
+    
+
+  
+</head>
+<body>
+    <div class="wapper">
+
+
+        <div class="row">
+            <div class="col-md-2">
+
+                <div class="sidebar-menu">
+                    <header class="logo1">
+                        <a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a>
+                    </header>
+                    <div style="border-top:1px ridge rgba(255, 255, 255, 0.15)"></div>
+                    <div class="menu">
+                        <ul id="menu">
+                            <li><a asp-action="index" asp-controller="admin"> <i class="fas fa-toolbox"></i><span>Dashboard</span><div class="clearfix"></div></a></li>
+                            <li id="menu-academico">
+                                <a><i class="fa fa-cogs" aria-hidden="true"></i><span> Quản lý sản phẩm</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
+                                <ul id="menu-academico-sub">
+                                    <li id="menu-academico-avaliacoes"><a asp-action="LineProduct" asp-controller="admin">Quản lý loại </a></li>
+                                    <li id="menu-academico-avaliacoes"><a  asp-action="Product" asp-controller="admin">Quản lý sản phẩm</a></li>
+                                    <li id="menu-academico-avaliacoes"><a asp-action="Customerindex" asp-controller="admin">Quản lý khách hàng</a></li>
+                                   
+                                    <li id="menu-academico-avaliacoes"><a  asp-action="SupplerIndex" asp-controller="admin">Quản lý Nhà cung cấp</a></li>
+                                </ul>
+                            </li>
+                        
+                          
+                        </ul>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+      
+
+
+
+            </div>
+            <div class="col-md-10">
+                <div id="content" style="padding-left:10px;">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <environment>
+   
+        <script src="~/js/admin/jquery-2.1.4.min.js"></script>
+
+
+        <script src="~/js/admin/raphael-min.js"></script>
+        <script src="~/js/admin/morris.js"></script>
+    </environment>
+
+
+    @RenderSection("script", required: false)
+
+</body>
+</html>

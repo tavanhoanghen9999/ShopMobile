@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewData["Title"] = "editCustomer";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section css{
+    <link href="~/css/admin/table/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/css/admin/table/fontawesome-all.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/css/admin/table/style4.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/css/admin/adaddlineproduct.css" rel="stylesheet" type="text/css">
+
+    <link href="//fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+}
+
+
+
+<!-- Forms-3 -->
+<div class="outer-w3-agile mt-3">
+    <h4 class="tittle-w3-agileits mb-4">Sửa Khách Hàng</h4>
+    <form action="#" method="post">
+        <div class="form-group">
+            
+                <label for="inputName">Tên Khách Hàng</label>
+                <input type="text" class="form-control" id="txtcustomername" placeholder="Name" required="">
+           
+        </div>
+        <div class="form-group">
+          
+                <label for="inputEmail4">Email</label>
+                <input type="email" class="form-control" id="txtemail" placeholder="Email" required="">
+            
+        </div>
+        <div class="form-group">
+            <label for="inputAddress">Địa Chỉ</label>
+            <input type="text" class="form-control" id="txtaddress" placeholder="1234 Main St" required="">
+        </div>
+        <div class="form-group">
+            <label for="inputAddress2">Số điện thoại</label>
+            <input type="number" class="form-control" id="txtnumberphone" placeholder="Apartment, studio, or floor" required="">
+        </div>
+        <div class="ml row-form">
+            <div class="ml text left-form" id="txtanh">Ảnh: </div>
+            <div class="ml right-form img-line" id="image-line-product">
+                <div class="bnt-add-picture" onclick="getImage()">Chọn</div>
+                <input id="ip-image" style="display:none" accept="image/*" type="file" class="ml text right-form" />
+            </div>
+            <button type="submit" class="btn btn-primary " onclick="validateInsertLinePeoduct()" style="margin-left:500px;margin-top:30px;width:70px;">Sửa</button>
+        </div>
+
+       
+    </form>
+</div>
+<!--// Forms-3 -->
+@section script{
+
+    <script src='~/js/admin/jquery-2.2.3.min.js'></script>
+    <script src="~/js/admin/bootstrap.min.js"></script>
+    <script src="~/js/admin/customer/editCustomer.js"></script>
+}
+
+

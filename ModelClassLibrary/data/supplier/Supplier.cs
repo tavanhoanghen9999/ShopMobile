@@ -13,7 +13,12 @@ namespace ModelClassLibrary.data.supplier
         public int supplierid { get; set; }
         public string suppliername { get; set; }
         public string address { get; set; }
-        public int phonenumber { get; set; }
+        public string phonenumber { get; set; }
         public string picture { get; set; }
+        public string email { get; set; }
+        public DateTime createday { get; set; }
+        public Boolean activity { get; set; }
+
+
     }
 }

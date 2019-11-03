@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -32,6 +33,9 @@ namespace WebApi.controllers.admin.supplier
                 supplier.suppliername = file.suppliername;
                 supplier.phonenumber = file.phonenumber;
                 supplier.address = file.address;
+                supplier.email = file.email;
+                supplier.createday = DateTime.ParseExact(file.createday, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+
                 supplier.picture = await m_image.uploadFile(file.picture);
             }
             catch (Exception e)
@@ -46,8 +50,9 @@ namespace WebApi.controllers.admin.supplier
             DataRespond data = new DataRespond();
             try
             {
+                
                 data.success = true;
-                m_supplier.getAll();
+                data.data=m_supplier.getAll();
                 data.messger = "Success";
             }
             catch (Exception e)
@@ -61,13 +66,20 @@ namespace WebApi.controllers.admin.supplier
             return data;
         }
         [HttpPost]
-        public DataRespond insert(SupplierRequest supplier)
+        public async Task<DataRespond> insertAsync([FromForm]SupplierRequest supplier)
         {
             DataRespond data = new DataRespond();
             try
             {
+                Supplier s = new Supplier();
+                s.suppliername = supplier.suppliername;
+                s.phonenumber = supplier.phonenumber;
+                s.email = supplier.email;
+                DateTime createday = DateTime.ParseExact(supplier.createday, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                s.createday = createday;//2019-12-10
+                s.picture = await m_image.uploadFile(supplier.picture);
                 data.success = true;
-                m_supplier.insert(supplier);
+                m_supplier.insert(s);
                 data.messger = "Insert success";
 
             }catch(Exception e)
@@ -80,7 +92,7 @@ namespace WebApi.controllers.admin.supplier
             return data;
         }
         [HttpPut]
-        public DataRespond update(SupplierRequest supplier)
+        public DataRespond update(Supplier supplier)
         {
             DataRespond data = new DataRespond();
             try

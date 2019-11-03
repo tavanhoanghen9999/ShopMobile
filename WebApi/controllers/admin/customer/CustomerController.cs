@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -31,7 +32,7 @@ namespace WebApi.controllers.admin.customer
             try
             {
                 data.success = true;
-                m_customer.getAll();
+                data.data=m_customer.getAll();
                 data.messger = "Success";
             }catch(Exception e)
             {
@@ -41,14 +42,21 @@ namespace WebApi.controllers.admin.customer
             }
             return data;
         }
-        [HttpPost]
-        public DataRespond insert(Customer customer)
+        [HttpPost("insertcustomer")]
+        public async Task<DataRespond> insertAsync([FromForm]CustomerRequest customer)
         {
             DataRespond data = new DataRespond();
             try
             {
+                Customer c = new Customer();
+                c.namecustomer = customer.namecustomer;
+                c.email = customer.email;
+                c.address = customer.address;
+                c.phonenumber = customer.phonenumber;
+                c.activity = customer.activity == 0 ? true : false;
+                c.picture = await m_image.uploadFile(customer.picture);
                 data.success = true;
-                m_customer.insert(customer);
+                m_customer.insert(c);
                 data.messger = "Insert success";
 
             }catch(Exception e)
@@ -62,13 +70,20 @@ namespace WebApi.controllers.admin.customer
             return data;
         }
         [HttpPut]
-        public DataRespond update(Customer customer)
+        public async Task<DataRespond> updateAsync([FromForm]CustomerRequest customer)
         {
             DataRespond data = new DataRespond();
             try
             {
+                Customer c = m_customer.getById(customer.customerid);
+                c.namecustomer = customer.namecustomer;
+                c.email = customer.email;
+                c.address = customer.address;
+                c.phonenumber = customer.phonenumber;
+                c.picture = await m_image.uploadFile(customer.picture);
+
                 data.success = true;
-                m_customer.update(customer);
+                m_customer.update(c);
                 data.messger = "Update success";
 
             }catch(Exception e)

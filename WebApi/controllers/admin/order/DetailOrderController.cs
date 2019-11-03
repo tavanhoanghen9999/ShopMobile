@@ -25,7 +25,7 @@ namespace WebApi.controllers.admin.order
             try
             {
                 data.success = true;
-                m_detailOrder.getAll();
+                data.data=m_detailOrder.getAll();
                 data.messger = "Success";
 
             }catch(Exception e)

@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewData["Title"] = "SupplerIndex";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section css{
+
+}
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">WebSiteName</a>
+        </div>
+
+        <form class="navbar-form navbar-left" action="/action_page.php">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search" name="search">
+                <div class="input-group-btn">
+                    <button class="btn btn-default" type="submit">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</nav>
+<h2>Hover Rows</h2>
+<div style="float:right;margin-bottom:10px;margin-right:40px;">
+    <button> <a asp-action="SupplerInsert" asp-controller="admin">Create</a></button>
+</div>
+@*<div>
+        <a asp-action="addlineproduct" asp-controller="admin"><button type="submit" class="btn btn-success">Create</button></a>
+    </div>*@
+
+<table class="table table-hover col-md-12">
+    <thead>
+        <tr>
+            <th scope="col">Mã Nhà Cung Cấp</th>
+            <th scope="col">Tên Nhà Cung Cấp</th>
+            <th scope="col">Số Điện Thoại</th>
+            <th scope="col">email</th>
+            <th scope="col">Đia Chỉ</th>
+            <th scope="col">Hình</th>
+            <th scope="col">Ngày</th>
+            <th scope="col">Trạng thái</th>
+            <th scope="col">Chức Năng </th>
+
+        </tr>
+    </thead>
+    <tbody id="supplier"></tbody>
+</table>
+
+@section script{
+    <script src="~/js/admin/supplier/SupplierIndex.js"></script>
+}
+
+
+

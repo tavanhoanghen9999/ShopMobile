@@ -1,0 +1,13 @@
+﻿:root{
+    --font:16px;
+    --cl-main:#333333;
+}
+
+.ml{
+    position:relative;
+    float:left;
+}
+.text{
+    font-size:var(--font);
+    color:var(--cl-main);
+}
