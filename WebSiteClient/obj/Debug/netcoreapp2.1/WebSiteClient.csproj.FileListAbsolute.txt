@@ -36,3 +36,5 @@ C:\Luan Van\ShopMobile\WebSiteClient\obj\Debug\netcoreapp2.1\Razor\Views\Admin\L
 C:\Luan Van\ShopMobile\WebSiteClient\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Product.g.cshtml.cs
 C:\Luan Van\ShopMobile\WebSiteClient\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Customer.g.cshtml.cs
 C:\Luan Van\ShopMobile\WebSiteClient\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Supplier.g.cshtml.cs
+C:\Luan Van\ShopMobile\WebSiteClient\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Order.g.cshtml.cs
+C:\Luan Van\ShopMobile\WebSiteClient\obj\Debug\netcoreapp2.1\Razor\Views\Admin\DetailOrder.g.cshtml.cs

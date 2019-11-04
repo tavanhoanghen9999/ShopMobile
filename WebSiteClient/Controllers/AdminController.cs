@@ -28,6 +28,14 @@ namespace WebSiteClient.Controllers
         {
             return View();
         }
+        public IActionResult Order()
+        {
+            return View();
+        }
+        public IActionResult DetailOrder()
+        {
+            return View();
+        }
 
     }
 }

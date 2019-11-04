@@ -29,15 +29,15 @@
         </div>
 
         @*<div class="h body-customer">
-            <span class="h item-table-customer">Ảnh</span>
-            <span class="h item-table-customer">Mã KH</span>
-            <span class="h item-table-customer">Tên KH</span>
-            <span class="h item-table-customer">SĐT</span>
-            <span class="h item-table-customer">Email</span>
-            <span class="h item-table-customer">Địa chỉ</span>
-            <span class="h item-table-customer">Trang thái</span>
-            <span class="h item-table-customer">Chức năng</span>
-        </div>*@
+                <span class="h item-table-customer">Ảnh</span>
+                <span class="h item-table-customer">Mã KH</span>
+                <span class="h item-table-customer">Tên KH</span>
+                <span class="h item-table-customer">SĐT</span>
+                <span class="h item-table-customer">Email</span>
+                <span class="h item-table-customer">Địa chỉ</span>
+                <span class="h item-table-customer">Trang thái</span>
+                <span class="h item-table-customer">Chức năng</span>
+            </div>*@
     </div>
 
     @*Thêm customer*@
@@ -69,10 +69,10 @@
 
                     <div class="h dl-sm-it">
                         <span class="h insert-cus" id="select-cus">Trạng thái: </span>
-                        <select name="selector1" id="sl-ativity-cs" class="h insert-prduct-select ">
+                        <select name="selector1" id="sl-activity-cus" class="h insert-prduct-select ">
                             <option value="0">Còn hoạt động</option>
-                           @* <option value="1">Ngừng hoạt động</option>*@
-                            
+                            @*<option value="1">Ngừng hoạt động</option>*@
+
                         </select>
                     </div>
 
@@ -89,6 +89,64 @@
                         Đóng
                     </button>
                     <span type="button" class="h btn-insert" onclick="insertcustomer()">
+                        <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                        Cập nhật
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    @*edit customer*@
+    <div class="modal fade" id="update-customer" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Cập nhật khách hàng </h4>
+                </div>
+                <div class="h modal-body-customer">
+                    <div class="h dl-sm-it">
+                        <span class="h insert-cus">Tên khách hàng: </span>
+                        <input class="h insert-pr-input" id="txtnamecustomer-edit" type="text" />
+                    </div>
+                    <div class="h dl-sm-it">
+                        <span class="h insert-cus">Số điện thoại: </span>
+                        <input class="h insert-pr-input" id="txtnumberphone-edit" type="number" />
+                    </div>
+                    <div class="h dl-sm-it">
+                        <span class="h insert-cus">Email: </span>
+                        <input class="h insert-pr-input" id="txtemail-edit" type="email" />
+                    </div>
+                    <div class="h dl-sm-it">
+                        <span class="h insert-cus">Địa chỉ: </span>
+                        <input class="h insert-pr-input" id="txtaddress-edit" type="text" />
+                    </div>
+
+                    <div class="h dl-sm-it">
+                        <span class="h insert-cus" id="select-cus">Trạng thái: </span>
+                        <select name="selector1" id="sl-activity-cus-edit" class="h insert-prduct-select ">
+                            <option value="0">Còn hoạt động</option>
+                            <option value="1">Ngừng hoạt động</option>
+
+                        </select>
+                    </div>
+
+                    <div class="h dl-sm-it">
+                        <span class="h insert-cus">Hình: </span>
+                        <input class="h insert-pr-input" id="txtpicture-edit" type="file" />
+
+                    </div>
+
+                    @*<span class="k dl-bnt-save" onclick="updateChiBo()">Cập nhật</span>*@
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="k btn btn-default" data-dismiss="modal">
+                        Đóng
+                    </button>
+                    <span type="button" class="h btn-insert" onclick="updatecustomer()">
                         <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
                         Cập nhật
                     </span>

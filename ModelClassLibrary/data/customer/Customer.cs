@@ -16,6 +16,6 @@ namespace ModelClassLibrary.data.customer
         public string email { get; set; }
         public string address { get; set; }
         public string picture { get; set; }
-        public bool activity { get; set; }
+        public Boolean activity { get; set; }
     }
 }

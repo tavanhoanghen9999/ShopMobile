@@ -58,7 +58,7 @@
                     <div class="h modal-body-product">
                         <div class="h dl-sm-it">
                             <span class="h insert-prduct">Tên Loại: </span>
-                            <input class="h insert-pr-input" id="txtlinename" type="text" />
+                            <input class="h insert-pr-input" id="txtproduct" type="text" />
                         </div>
                         <div class="h dl-sm-it">
                             <span class="h insert-prduct">Ghi Chú: </span>
@@ -78,20 +78,20 @@
                         
                         <div class="h dl-sm-it">
                             <span class="h insert-prduct">Số lượng: </span>
-                            <input class="h insert-pr-input" id="txttotal" type="text" />
+                            <input class="h insert-pr-input" id="txttotal" type="number" />
                         </div>
                         <div class="h dl-sm-it">
                             <span class="h insert-prduct">Gía : </span>
-                            <input class="h insert-pr-input" id="txtprice" type="text" />
+                            <input class="h insert-pr-input" id="txtprice" type="number" />
                         </div>
                         <div class="h dl-sm-it">
                             <span class="h insert-prduct">Gía giảm: </span>
-                            <input class="h insert-pr-input" id="txtdiscount" type="text" />
+                            <input class="h insert-pr-input" id="txtdiscount" type="number" />
                         </div>
                         <div class="h dl-sm-it">
                             <span class="h insert-prduct">Mã loại: </span>
 
-                            <select name="selector1" id="select-linepr" class="h insert-prduct-select ">
+                            <select name="selector1" id="select-lineproduct" class="h insert-prduct-select ">
                                 @*<option value="1">Điện thoại</option>
                 <option value="2">Máy tính</option>
                 <option value="3">Đồng hồ</option>
@@ -102,7 +102,7 @@
                         <div class="h dl-sm-it">
                             <span class="h insert-prduct">Mã hãng: </span>
 
-                            <select name="selector1" id="select-supplier" class="h insert-prduct-select ">
+                            <select name="selector1" id="select-supplierid" class="h insert-prduct-select ">
                                 @*<option value="1">Samsung </option>
                                 <option value="2">Iphone</option>
                                 <option value="3">Đồng hồ</option>
@@ -113,7 +113,7 @@
                         <div class="h dl-sm-it">
                             <span class="h insert-prduct">Trạng thái: </span>
 
-                            <select name="selector1" id="txtsuplierid" class="h insert-prduct-select ">
+                            <select name="selector1" id="sl-activity-pr" class="h insert-prduct-select ">
                                 <option value="0">Còn hàng</option>
                                 <option value="1">Hết hàng</option>
                                 <option value="2">Hàng mới</option>
@@ -132,7 +132,7 @@
                         <button type="button" class="k btn btn-default" data-dismiss="modal">
                             Đóng
                         </button>
-                        <span type="button" class="h btn-insert" onclick="insertLineProduct()">
+                        <span type="button" class="h btn-insert" onclick="insertproduct()">
                             <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
                             Cập nhật
                         </span>

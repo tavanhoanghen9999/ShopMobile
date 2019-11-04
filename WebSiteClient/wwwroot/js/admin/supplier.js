@@ -77,7 +77,7 @@ function bindingsupplier(modle) {
             <span class="h item-table">`+ item.phonenumber + `</span>
             <span class="h item-table">`+ item.email + `</span>
             <span class="h item-table">`+ formatDate(new Date(item.createday)) + `</span>
-            <span class="h item-table">`+ (item.active == true ? 'Còn hoạt động' : 'Ngừng hoạt động')  + `</span>
+            <span class="h item-table">`+ (item.activity == true ? 'Còn hoạt động' : 'Ngừng hoạt động')  + `</span>
             <span class="h item-table">
                 <i class="fa fa-pencil-square-o icon-edit bnt-add-linepr" data-toggle="modal" data-target="#linepr-edit" onclick="getSupplierById(`+ item.supplierid + `)" aria-hidden="true"></i>
                 <i class="fa fa-trash-o icon-edit" data-toggle="modal" data-target="#table-linepr1" onclick="deletesupplier(`+ item.supplierid + `)" aria-hidden="true"></i>
@@ -112,6 +112,7 @@ function insertsupplier() {
         },
         success: function (data) {
             if (data.success) {
+                //for(var item in )
                 $('#insert-supplier').modal('toggle');
                 bootbox.alert("Thêm thành công");
                 getsupplier();
@@ -158,7 +159,7 @@ function updatesupplier() {
     formDataedit.append("email", $("#txtemail-edit").val());
     formDataedit.append("createday", $("#txtcreateday-edit").val());
     formDataedit.append("supplierid", supplierid);
-    formDataedit.append("ativity", active);
+    formDataedit.append("activity", parseInt($("#sl-ativity-edit").children("option:selected").val()));
 
     $.ajax({
         url: linkserver + "supplier",

@@ -42,6 +42,28 @@ namespace WebApi.controllers.admin.customer
             }
             return data;
         }
+        //getbyid
+        [HttpGet("getbyid")]
+        public DataRespond getById(int id)
+        {
+            DataRespond data = new DataRespond();
+            try
+            {
+                data.success = true;
+                data.data = m_customer.getById(id);
+                data.messger = "success";
+
+
+            }
+            catch (Exception e)
+            {
+                data.success = false;
+                data.error = e;
+                data.messger = e.Message;
+            }
+            return data;
+        }
+
         [HttpPost("insertcustomer")]
         public async Task<DataRespond> insertAsync([FromForm]CustomerRequest customer)
         {
@@ -53,8 +75,8 @@ namespace WebApi.controllers.admin.customer
                 c.email = customer.email;
                 c.address = customer.address;
                 c.phonenumber = customer.phonenumber;
-                c.activity = customer.activity == 0 ? true : false;
                 c.picture = await m_image.uploadFile(customer.picture);
+                c.activity = customer.activity == 0 ? true : false;
                 data.success = true;
                 m_customer.insert(c);
                 data.messger = "Insert success";
@@ -80,8 +102,11 @@ namespace WebApi.controllers.admin.customer
                 c.email = customer.email;
                 c.address = customer.address;
                 c.phonenumber = customer.phonenumber;
-                c.picture = await m_image.uploadFile(customer.picture);
-
+                if (customer.picture !=null)
+                {
+                    c.picture = await m_image.uploadFile(customer.picture);
+                }
+                c.activity = customer.activity == 0 ? true : false;
                 data.success = true;
                 m_customer.update(c);
                 data.messger = "Update success";

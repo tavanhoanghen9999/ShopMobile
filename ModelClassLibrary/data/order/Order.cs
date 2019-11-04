@@ -15,9 +15,11 @@ namespace ModelClassLibrary.data.order
         public string address { get; set; }
         public DateTime createday { get; set; }
         public DateTime daydelivery { get; set; }
-        public int phonenumber { get; set; }
-        public double sumprice { get; set; }
+        public string phonenumber { get; set; }
+        public long sumprice { get; set; }
         public int customerid { get; set; }
+        public Boolean activity { get; set; }
+        public string email { get; set; }
 
     }
 }

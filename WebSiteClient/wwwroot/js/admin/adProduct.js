@@ -1,8 +1,23 @@
 ﻿getProduct();
+getLineProduct();
 getsupplier();
+active = 0;
+lineid = 0;
+supplierid = 0;
 var formData = new FormData();
 
-
+// add activity
+$('#sl-activity-pr').on('change', function () {
+    active = parseInt(this.value);
+});
+// id loai
+$('#select-lineproduct').on('change', function () {
+    lineid = parseInt(this.value);
+});
+// id supplier
+$('#select-supplierid').on('change', function () {
+    supplierid = parseInt(this.value);
+});
 //ở đây copy cái hàm lấy loại 
 getLineProduct();
 function getLineProduct() {
@@ -20,7 +35,7 @@ function getLineProduct() {
             if (data.success) {
                 for (var i in data.data) {
                     var item = data.data[i];
-                    $("#select-linepr").append('<option value="' + item.lineid + '">' + item.linename + '</option>');
+                    $("#select-lineproduct").append('<option value="' + item.lineid + '">' + item.linename + '</option>');
                 }
             }
         }
@@ -42,7 +57,7 @@ function getsupplier() {
             if (data.success) {
                 for (var i in data.data) {
                     var item = data.data[i];
-                    $("#select-supplier").append('<option value="' + item.supplierid + '">' + item.suppliername + '</option>');
+                    $("#select-supplierid").append('<option value="' + item.supplierid + '">' + item.suppliername + '</option>');
                 }
             }
         }
@@ -89,7 +104,7 @@ function getProduct() {
         }
     });
 }
-
+// show product
 function bindingProduct(modle) {
     if (modle.success) {
 
@@ -97,6 +112,7 @@ function bindingProduct(modle) {
         if (modle.data) {
             for (var i in modle.data) {
                 var item = modle.data[i];
+
                 $('#item-product').append(`<div class="h body-table" id="item-product">
         <span class="h item-table-product" style="background-image:url(`+ linkproduct + item.picture + `)"></span>
         <span class="h item-table-product">`+ item.productid +`</span>
@@ -107,10 +123,11 @@ function bindingProduct(modle) {
         <span class="h item-table-product">`+ item.discount +`</span>
         <span class="h item-table-product">`+ item.lineid +`</span>
         <span class="h item-table-product">`+ item.supplierid + `</span>
-        <span class="h item-table-product">`+ item.activity +`</span>
+        <span class="h item-table-product">`+ (item.activity == 0 ? "Còn hàng" : item.activity == 1 ? "Hết hàng" :"Hàng mới") +`</span>
+            
         <span class="h item-table-product">
             <i class="fa fa-pencil-square-o icon-table bnt-add-product" data-toggle="modal" data-target="#linepr-edit" onclick="getLineProductById(`+ item.lineid + `)" aria-hidden="true"></i>
-                <i class="fa fa-trash-o icon-table" data-toggle="modal" data-target="#table-linepr1" onclick="deletelineproduct(`+ item.lineid +`)" aria-hidden="true"></i>
+                <i class="fa fa-trash-o icon-table" data-toggle="modal" data-target="#table-linepr1" onclick="deleteproduct(`+ item.productid +`)" aria-hidden="true"></i>
         </span>
     </div>`);
             }
@@ -120,9 +137,8 @@ function bindingProduct(modle) {
 
 //insert product
 
-
-function insertLineProduct() {
-    formData.append("nameproduct", $("#txtlinename").val());
+function insertproduct() {
+    formData.append("nameproduct", $("#txtproduct").val());
     formData.append("note", $("#txtnote").val());
     formData.append("total", $("#txttotal").val());
     formData.append("price", $("#txtprice").val());
@@ -130,9 +146,11 @@ function insertLineProduct() {
     formData.append("discount", $("#txtdiscount").val());
     var x = $("#txtlineid").children("option:selected").val();
     var y = $("#txtlineid").children("option:selected").val();
+   
+
 
     $.ajax({
-        url: linkserver + "lineproduct/insertproduct",
+        url: linkserver + "product/insertproduct",
         type: 'post',
         dataType: 'json',
         async: false,
@@ -146,9 +164,9 @@ function insertLineProduct() {
         },
         success: function (data) {
             if (data.success) {
-                $('#insert-linepr').modal('toggle');
+                $('#insert-product').modal('toggle');
                 bootbox.alert("Thêm thành công");
-                getLineProduct();
+                getProduct();
             }
             else {
                 alert("Có lỗi xảy ra vui lòng kiểm tra lại thông tin !");
@@ -156,6 +174,35 @@ function insertLineProduct() {
         }
     });
 }
+
+//delete product
+function deleteproduct(id) {
+    if (true) {
+        $.ajax({
+            type: "delete",
+            url: linkserver + "product?id=" + id,
+            data: null,
+            //headers: { 'authorization': `Bearer ${token}` },
+            dataType: 'json',
+            contentType: "application/json",
+            error: function (err) {
+                bootbox.alert("Có lỗi xảy ra, vui lòng kiểm tra lại khóa ngoại sản phẩm của bạn");
+            },
+            success: function (data) {
+                if (data.success) {
+                    bootbox.alert("Xóa thông tin sản phẩm thành công!");
+                    getproduct(bindingproduct);
+                }
+                else {
+                    alert(data.message);
+                }
+            }
+        });
+
+    }
+}
+
+
 
 
 //datetime picker

@@ -1,8 +1,8 @@
 ﻿var linkserver = 'https://localhost:44344/api/';
-var linklineproduct = 'https://localhost:44344/img/lineproduct';
-var linkproduct = 'https://localhost:44344/img/product';
-var linkcustomer = 'https://localhost:44344/img/customer';
-var linksupplier = 'https://localhost:44344/img/supplier';
+var linklineproduct = 'https://localhost:44344/img/lineproduct/';
+var linkproduct = 'https://localhost:44344/img/product/';
+var linkcustomer = 'https://localhost:44344/img/customer/';
+var linksupplier = 'https://localhost:44344/img/supplier/';
 
 
 function formatDate(date) {

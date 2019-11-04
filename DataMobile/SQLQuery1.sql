@@ -91,9 +91,10 @@ Create Table Users
 alter table  Suppliers add email nvarchar(50)
  alter table  Suppliers add activity bit
 alter table  Suppliers add createday Datetime
-
+alter table orders add email nvarchar(30)
+alter table orders add activity bit
+alter table DetailOrders add activity bit
 alter table  Customers add activity bit
-
 alter table  Products add activity big
 
 

@@ -9,6 +9,8 @@ using WebApi.service.admin.order;
 
 namespace WebApi.controllers.admin.order
 {
+
+    [Route("api/[controller]")]
     public class OrderController : Controller
     {
         private IOrder m_order;

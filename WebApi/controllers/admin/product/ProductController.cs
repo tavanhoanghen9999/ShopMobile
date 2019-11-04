@@ -35,7 +35,8 @@ namespace WebApi.controllers.admin.product
                 pr.note = file.note;
                 pr.price = file.price;
                 pr.total = file.total;
-                pr.activity = file.activity==0?true:false;
+                pr.discount = file.discount;
+                pr.activity = file.activity==0?true: false ;
                 pr.productid = file.productid;
                 pr.supplierid = file.supplierid;
                 
@@ -67,7 +68,7 @@ namespace WebApi.controllers.admin.product
 
             return data;
         }
-        [HttpPost]
+        [HttpPost("insertproduct")]
         public async Task<DataRespond> insertAsync([FromForm]ProductRequest product)
         {
             DataRespond data = new DataRespond();
@@ -78,6 +79,7 @@ namespace WebApi.controllers.admin.product
                 p.note = product.note;
                 p.price = product.price;
                 p.discount = product.discount;
+                p.activity = product.activity == 0 ? true : false;
                 DateTime cday = DateTime.ParseExact(product.createday, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 p.createday = cday;
                 p.picture = await m_image.uploadFile(product.picture);

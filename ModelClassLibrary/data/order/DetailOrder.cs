@@ -12,9 +12,10 @@ namespace ModelClassLibrary.data.detailorder
         [Key]
         public int detailorderid { get; set; }
         public int total { get; set; }
-        public double price { get; set; }
-        public double discount { get; set; }
+        public long price { get; set; }
+        public long discount { get; set; }
         public int orderid { get; set; }
         public int productid { get; set; }
+        public Boolean activity { get; set; }
     }
 }

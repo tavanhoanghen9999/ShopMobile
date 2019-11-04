@@ -1,0 +1,99 @@
+﻿@import url('ad_config.css');
+
+
+@media only screen and (min-width:0px) {
+    .main-form {
+        width: 100%;
+        height: auto;
+    }
+
+    .title-or {
+        width: 100%;
+        padding: 10px;
+        background-color: rgba(51,51,51,0.1);
+        color: var(--color-main);
+    }
+
+    .table-or {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .head-table {
+        width: 100%;
+        background-color: rgba(51,51,51,0.1);
+    }
+
+    .bnt-add-or{
+        width: auto;
+        border: 1px solid rgba(51,51,51,0.1);
+        background-color: var(--color-button);
+        padding: 5px;
+        border-radius: 4px;
+        float: right;
+        cursor: pointer;
+    }
+
+    .body-table {
+        width: 100%;
+        border: 1px solid rgba(51,51,51,0.1);
+    }
+
+    .item-table {
+        width: 9.09090909%;
+        padding: 5px;
+        border-right: 1px solid rgba(51,51,51,0.1);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 80px;
+    }
+
+    .icon-edit {
+        font-size: 20px;
+        border: 1px solid rgba(51,51,51,0.1);
+        padding: 3px 5px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    /*//herder*/
+
+    /*form-insertLineproduct*/
+    .modal-body {
+        width: 100%;
+        background-color: rgba(51,51,51,0.1);
+    }
+
+    .dl-sm-it {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .insert-or {
+        width: 20%;
+    }
+
+    .insert-or-input {
+        width: 80%;
+        cursor: pointer;
+        border-radius: 5px;
+        border: 1px solid rgba(51,51,51,0.1);
+        padding: 5px;
+    }
+
+    .btn-insert {
+        width: auto;
+        cursor: pointer;
+        border-radius: 5px;
+        border: 1px solid rgba(51,51,51,0.1);
+        float: right;
+        margin-left: 10px;
+        height: 33px;
+        text-align: center;
+        padding: 5px;
+    }
+
+        .btn-insert:hover {
+            background-color: forestgreen;
+        }
+}
