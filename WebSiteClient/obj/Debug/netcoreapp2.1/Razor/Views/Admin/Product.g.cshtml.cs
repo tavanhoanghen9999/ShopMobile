@@ -74,7 +74,7 @@ using WebSiteClient.Models;
                 WriteLiteral("\r\n\r\n    ");
                 EndContext();
                 BeginContext(120, 58, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "11df81e900f3493684900da7a8a4ad15", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "a104667da3344c018e9ffdd0ba54d6c4", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -188,7 +188,7 @@ using WebSiteClient.Models;
                                 ");
             EndContext();
             BeginContext(6196, 35, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a8b1a93eda094feb96c151b21620b786", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2255093dc2f040ce9206b6f710fd978f", async() => {
                 BeginContext(6214, 8, true);
                 WriteLiteral("Còn hàng");
                 EndContext();
@@ -210,7 +210,7 @@ using WebSiteClient.Models;
             WriteLiteral("\r\n                                ");
             EndContext();
             BeginContext(6265, 35, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "13ecee04a0454224989907c642082661", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1bc76302baed4d748dddef4b7a8e058d", async() => {
                 BeginContext(6283, 8, true);
                 WriteLiteral("Hết hàng");
                 EndContext();
@@ -232,7 +232,7 @@ using WebSiteClient.Models;
             WriteLiteral("\r\n                                ");
             EndContext();
             BeginContext(6334, 35, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6cf87cbf996f4bf581c1503f3d43f327", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3e49e4be1bb744778cce69bc485b1c08", async() => {
                 BeginContext(6352, 8, true);
                 WriteLiteral("Hàng mới");
                 EndContext();
@@ -290,7 +290,7 @@ using WebSiteClient.Models;
                 WriteLiteral("\r\n\r\n            ");
                 EndContext();
                 BeginContext(7449, 47, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "19416f801b3a489f9168a7b4575079b3", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb1256a9f4ce4e24a09a19607dfc3ed5", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

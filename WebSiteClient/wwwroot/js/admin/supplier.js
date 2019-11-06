@@ -1,7 +1,7 @@
 ﻿getsupplier();
 
 var supplierid = -1;
-
+var active = 0;
 var formData = new FormData();
 var formDataedit = new FormData();
 
@@ -10,7 +10,7 @@ $("#txtpicture").change(function () {
     readImageUpload(this);
 });
 
-var active = 0;
+
 $('#sl-ativity').on('change', function () {
     active = parseInt(this.value);
 })
@@ -159,7 +159,10 @@ function updatesupplier() {
     formDataedit.append("email", $("#txtemail-edit").val());
     formDataedit.append("createday", $("#txtcreateday-edit").val());
     formDataedit.append("supplierid", supplierid);
-    formDataedit.append("activity", parseInt($("#sl-ativity-edit").children("option:selected").val()));
+
+    var s = parseInt($("#sl-ativity-edit").children("option:selected").val());
+    formDataedit.append("activity", s);
+    //formDataedit.append("activity", parseInt($("#sl-ativity-edit").children("option:selected").val()));
 
     $.ajax({
         url: linkserver + "supplier",

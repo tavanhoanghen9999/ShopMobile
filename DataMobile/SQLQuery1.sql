@@ -15,6 +15,11 @@ Create Table Suppliers
 	address nvarchar(500),
 	phonenumber nvarchar(10),
 	picture nvarchar(20),	
+	activity bit,
+	email nvarchar(50),
+	createday Datetime,
+
+
 )
 
 Create Table Products
@@ -26,6 +31,7 @@ Create Table Products
 	total int ,
 	price bigint,
 	createday Datetime,
+	activity int,
 	lineid int,
 	discount bigint,
 	supplierid int,
@@ -44,6 +50,8 @@ Create Table Orders
 	phonenumber nvarchar(10),
 	sumprice bigint,
 	customerid int,
+	email nvarchar(50),
+	activity int,
 	primary key(orderid),
 	foreign key(customerid) references Customers(customerid),
 
@@ -56,6 +64,7 @@ Create Table DetailOrders
 	discount bigint,
 	orderid int,
 	productid int,
+	activity bit,
 	primary key (detailorderid),
 	foreign key(orderid) references Orders(orderid),
 	foreign key(productid) references Products(productid),
@@ -69,6 +78,7 @@ Create Table DetailOrders
 	address nvarchar(500),
 	primary key(customerid),
 	picture nvarchar(20),
+	activity bit,
 
 ) 
 Create Table Roles
@@ -91,12 +101,8 @@ Create Table Users
 alter table  Suppliers add email nvarchar(50)
  alter table  Suppliers add activity bit
 alter table  Suppliers add createday Datetime
-alter table orders add email nvarchar(30)
-alter table orders add activity bit
-alter table DetailOrders add activity bit
-alter table  Customers add activity bit
-alter table  Products add activity big
 
+ alter table  Customer add activity bit
 
 
 SELECT GETDATE()

@@ -144,8 +144,8 @@ function insertproduct() {
     formData.append("price", $("#txtprice").val());
     formData.append("createday", $("#txtcreateday").val());
     formData.append("discount", $("#txtdiscount").val());
-    var x = $("#txtlineid").children("option:selected").val();
-    var y = $("#txtlineid").children("option:selected").val();
+    //var x = $("#txtlineid").children("option:selected").val();
+    //var y = $("#txtlineid").children("option:selected").val();
    
 
 

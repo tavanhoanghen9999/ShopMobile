@@ -18,7 +18,7 @@ namespace ModelClassLibrary.data.order
         public string phonenumber { get; set; }
         public long sumprice { get; set; }
         public int customerid { get; set; }
-        public Boolean activity { get; set; }
+        public int activity { get; set; }
         public string email { get; set; }
 
     }

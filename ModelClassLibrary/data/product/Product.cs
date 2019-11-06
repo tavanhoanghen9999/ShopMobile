@@ -17,7 +17,7 @@ namespace ModelClassLibrary.data.product
         public int total { get; set; }
         public long price { get; set; }
         public long discount { get; set; }
-        public Boolean activity { get; set; }
+        public int activity { get; set; }
         public DateTime createday { get; set; }
         public int lineid { get; set; }
         public int supplierid { get; set; }

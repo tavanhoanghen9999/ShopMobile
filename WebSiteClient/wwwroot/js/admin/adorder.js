@@ -48,6 +48,44 @@ function bindingorder(modle) {
     }
 }
 
+//inser order
+function insertLineProduct() {
+    formData.append("nameorder", $("#txtlinename").val());
+    formData.append("linenote", $("#txtnote").val());
+    formData.append("address", $("#txtnote").val());
+    formData.append("phonenumber", $("#txtnote").val());
+    formData.append("sumprice", $("#txtnote").val());
+    formData.append("customerid", $("#txtnote").val());
+    formData.append("email", $("#txtnote").val());
+    formData.append("createday", $("#txtcreateday").val());
+    formData.append("daydelivery", $("#txtcreateday").val());
+
+    $.ajax({
+        url: linkserver + "lineproduct/insertlineproduct",
+        type: 'post',
+        dataType: 'json',
+        async: false,
+        data: formData,
+        //headers: { 'authorization': `Bearer ${token}` },
+        processData: false,
+        contentType: false,
+        cache: false,
+        error: function (err) {
+            alert("That bai");
+        },
+        success: function (data) {
+            if (data.success) {
+                $('#insert-linepr').modal('toggle');
+                bootbox.alert("Thêm thành công");
+                getLineProduct();
+            }
+            else {
+                alert("Có lỗi xảy ra vui lòng kiểm tra lại thông tin !");
+            }
+        }
+    });
+}
+
 //delete order
 function deleteorder(id) {
 

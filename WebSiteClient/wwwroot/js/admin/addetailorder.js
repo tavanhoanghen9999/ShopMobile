@@ -27,17 +27,16 @@ function bindingdetailorder(modle) {
             for (var i in modle.data) {
                 var item = modle.data[i];
                 $('#item-torder').append(` <div class="h body-table table-linepr1">
-           
-            <span class="h item-table">`+ item.detailorderid + `</span>
-            <span class="h item-table">`+ item.total + `</span>
-            <span class="h item-table">`+ item.price + `</span>
-            <span class="h item-table">`+ item.discount + `</span>
-            <span class="h item-table">`+ item.orderid + `</span>
-            <span class="h item-table">`+ item.productid + `</span>
-            <span class="h item-table">`+ (item.activity == 0 ? "Đã xử lý" : "Chưa xử lý") + `</span>
-            <span class="h item-table">
-                <i class="fa fa-pencil-square-o icon-edit bnt-add-linepr" data-toggle="modal" data-target="#linepr-edit" onclick="getLineProductById(`+ item.lineid + `)" aria-hidden="true"></i>
-                <i class="fa fa-trash-o icon-edit" data-toggle="modal" data-target="#table-linepr1" onclick="deletedetailorder(`+ item.detailorderid + `)" aria-hidden="true"></i>
+                    <span class="h item-table">`+ item.detailorderid + `</span>
+                    <span class="h item-table">`+ item.total + `</span>
+                    <span class="h item-table">`+ item.price + `</span>
+                    <span class="h item-table">`+ item.discount + `</span>
+                    <span class="h item-table">`+ item.orderid + `</span>
+                    <span class="h item-table">`+ item.productid + `</span>
+                    <span class="h item-table">`+ (item.activity == 0 ? "Đã xử lý" : "Chưa xử lý") + `</span>
+                    <span class="h item-table">
+                        <i class="fa fa-pencil-square-o icon-edit bnt-add-linepr" data-toggle="modal" data-target="#linepr-edit" onclick="getLineProductById(`+ item.lineid + `)" aria-hidden="true"></i>
+                        <i class="fa fa-trash-o icon-edit" data-toggle="modal" data-target="#table-linepr1" onclick="deletedetailorder(`+ item.detailorderid + `)" aria-hidden="true"></i>
             </span>
         </div>`);
             }
