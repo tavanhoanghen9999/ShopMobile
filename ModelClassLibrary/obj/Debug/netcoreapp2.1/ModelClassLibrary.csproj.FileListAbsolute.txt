@@ -10,3 +10,12 @@ C:\Luan Van\ShopMobile\ModelClassLibrary\obj\Debug\netcoreapp2.1\ModelClassLibra
 C:\Luan Van\ShopMobile\ModelClassLibrary\obj\Debug\netcoreapp2.1\ModelClassLibrary.csproj.CopyComplete
 C:\Luan Van\ShopMobile\ModelClassLibrary\obj\Debug\netcoreapp2.1\ModelClassLibrary.dll
 C:\Luan Van\ShopMobile\ModelClassLibrary\obj\Debug\netcoreapp2.1\ModelClassLibrary.pdb
+F:\ASP.NET\MrHen\ShopMobile\ModelClassLibrary\obj\Debug\netcoreapp2.1\ModelClassLibrary.csprojAssemblyReference.cache
+F:\ASP.NET\MrHen\ShopMobile\ModelClassLibrary\obj\Debug\netcoreapp2.1\ModelClassLibrary.csproj.CoreCompileInputs.cache
+F:\ASP.NET\MrHen\ShopMobile\ModelClassLibrary\obj\Debug\netcoreapp2.1\ModelClassLibrary.AssemblyInfoInputs.cache
+F:\ASP.NET\MrHen\ShopMobile\ModelClassLibrary\obj\Debug\netcoreapp2.1\ModelClassLibrary.AssemblyInfo.cs
+F:\ASP.NET\MrHen\ShopMobile\ModelClassLibrary\obj\Debug\netcoreapp2.1\ModelClassLibrary.dll
+F:\ASP.NET\MrHen\ShopMobile\ModelClassLibrary\obj\Debug\netcoreapp2.1\ModelClassLibrary.pdb
+F:\ASP.NET\MrHen\ShopMobile\ModelClassLibrary\bin\Debug\netcoreapp2.1\ModelClassLibrary.deps.json
+F:\ASP.NET\MrHen\ShopMobile\ModelClassLibrary\bin\Debug\netcoreapp2.1\ModelClassLibrary.dll
+F:\ASP.NET\MrHen\ShopMobile\ModelClassLibrary\bin\Debug\netcoreapp2.1\ModelClassLibrary.pdb

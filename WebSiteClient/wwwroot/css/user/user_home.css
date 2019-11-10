@@ -1,0 +1,118 @@
+﻿@import url("../config.css");
+
+:root {
+    --color-price: #e10c00;
+    --color-icon-cart: #08ea04;
+}
+
+@media only screen and (min-width:0px) {
+    .main-form {
+        width: 100%;
+        min-height: 100vh;
+    }
+
+    .form-body-item {
+        width: 100%;
+    }
+
+    .boder-item {
+        width: 25%;
+        padding: 5px;
+    }
+
+    .form-item {
+        width: 100%;
+        border: 1px solid rgba(51,51,51,0.1);
+        padding: 5px;
+    }
+
+    .img-product {
+        width: 100%;
+        height: 180px;
+        background-position: center;
+        background-size: contain;
+        text-align: center;
+        cursor: pointer;
+        background-image: url(https://cdn.tgdd.vn/Products/Images/42/153856/iphone-11-red-400x400.jpg);
+    }
+
+        .img-product:hover .form-detail-product {
+            display:block;
+        }
+
+    .text-title-area {
+        color: var(--c-dt-bl);
+        font-weight: 600;
+        width: 100%;
+        text-align: left;
+        background-color: rgba(51,51,51,0.1);
+        padding: 5px;
+        font-size: var(--font-title);
+    }
+
+    .name-product {
+        color: var(--c-dt-bl);
+        width: 100%;
+        font-weight: 600;
+        padding: 5px;
+        text-align: center;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .price-product {
+        color: var(--color-price);
+        font-size: var(--font-detail);
+        padding: 5px;
+        text-align: center;
+        width: 100%;
+        font-weight: bold;
+    }
+
+    .price-discount {
+        color: var(--c-dt-bl);
+        font-size: 14px;
+        text-decoration: line-through;
+        padding-left: 5px;
+        font-weight: 300;
+    }
+    /*address tocart*/
+    .form-detail-product {
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100px;
+        height: 50px;
+        margin: auto;
+        text-align: center;
+    }
+
+    .icon-product {
+        position: relative;
+        display: inline-block;
+        border: 1px solid rgba(51,51,51,0.1);
+        border-radius: 4px;
+        padding: 3px 5px;
+        color: var(--color-icon-cart);
+        background-color: rgba(199, 50, 50, 0.34);
+        font-size: 25px;
+        width: 45px;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        cursor: pointer;
+    }
+}
+
+@media only screen and (min-width:1200px) {
+    .text-title-area {
+        margin-bottom: 10px;
+    }
+
+    .form-body-item {
+        padding: 0 10%;
+    }
+}

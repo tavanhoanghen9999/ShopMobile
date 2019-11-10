@@ -15,3 +15,20 @@ C:\Luan Van\ShopMobile\WebApi\obj\Debug\netcoreapp2.1\WebApi.RazorTargetAssembly
 C:\Luan Van\ShopMobile\WebApi\obj\Debug\netcoreapp2.1\WebApi.csproj.CopyComplete
 C:\Luan Van\ShopMobile\WebApi\obj\Debug\netcoreapp2.1\WebApi.dll
 C:\Luan Van\ShopMobile\WebApi\obj\Debug\netcoreapp2.1\WebApi.pdb
+F:\ASP.NET\MrHen\ShopMobile\WebApi\bin\Debug\netcoreapp2.1\WebApi.deps.json
+F:\ASP.NET\MrHen\ShopMobile\WebApi\bin\Debug\netcoreapp2.1\WebApi.runtimeconfig.json
+F:\ASP.NET\MrHen\ShopMobile\WebApi\bin\Debug\netcoreapp2.1\WebApi.runtimeconfig.dev.json
+F:\ASP.NET\MrHen\ShopMobile\WebApi\bin\Debug\netcoreapp2.1\WebApi.dll
+F:\ASP.NET\MrHen\ShopMobile\WebApi\bin\Debug\netcoreapp2.1\WebApi.pdb
+F:\ASP.NET\MrHen\ShopMobile\WebApi\bin\Debug\netcoreapp2.1\ModelClassLibrary.dll
+F:\ASP.NET\MrHen\ShopMobile\WebApi\bin\Debug\netcoreapp2.1\ModelClassLibrary.pdb
+F:\ASP.NET\MrHen\ShopMobile\WebApi\obj\Debug\netcoreapp2.1\WebApi.csprojAssemblyReference.cache
+F:\ASP.NET\MrHen\ShopMobile\WebApi\obj\Debug\netcoreapp2.1\WebApi.csproj.CoreCompileInputs.cache
+F:\ASP.NET\MrHen\ShopMobile\WebApi\obj\Debug\netcoreapp2.1\WebApi.RazorAssemblyInfo.cache
+F:\ASP.NET\MrHen\ShopMobile\WebApi\obj\Debug\netcoreapp2.1\WebApi.RazorAssemblyInfo.cs
+F:\ASP.NET\MrHen\ShopMobile\WebApi\obj\Debug\netcoreapp2.1\WebApi.AssemblyInfoInputs.cache
+F:\ASP.NET\MrHen\ShopMobile\WebApi\obj\Debug\netcoreapp2.1\WebApi.AssemblyInfo.cs
+F:\ASP.NET\MrHen\ShopMobile\WebApi\obj\Debug\netcoreapp2.1\WebApi.RazorTargetAssemblyInfo.cache
+F:\ASP.NET\MrHen\ShopMobile\WebApi\obj\Debug\netcoreapp2.1\WebApi.csproj.CopyComplete
+F:\ASP.NET\MrHen\ShopMobile\WebApi\obj\Debug\netcoreapp2.1\WebApi.dll
+F:\ASP.NET\MrHen\ShopMobile\WebApi\obj\Debug\netcoreapp2.1\WebApi.pdb

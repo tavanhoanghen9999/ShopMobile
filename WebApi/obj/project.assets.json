@@ -4619,6 +4619,9 @@
       "ModelClassLibrary/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "2.1.0"
+        },
         "compile": {
           "bin/placeholder/ModelClassLibrary.dll": {}
         },
@@ -12558,23 +12561,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tahen\\.nuget\\packages\\": {},
+    "C:\\Users\\donki\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Luan Van\\ShopMobile\\WebApi\\WebApi.csproj",
+      "projectUniqueName": "F:\\ASP.NET\\MrHen\\ShopMobile\\WebApi\\WebApi.csproj",
       "projectName": "WebApi",
-      "projectPath": "C:\\Luan Van\\ShopMobile\\WebApi\\WebApi.csproj",
-      "packagesPath": "C:\\Users\\tahen\\.nuget\\packages\\",
-      "outputPath": "C:\\Luan Van\\ShopMobile\\WebApi\\obj\\",
+      "projectPath": "F:\\ASP.NET\\MrHen\\ShopMobile\\WebApi\\WebApi.csproj",
+      "packagesPath": "C:\\Users\\donki\\.nuget\\packages\\",
+      "outputPath": "F:\\ASP.NET\\MrHen\\ShopMobile\\WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\tahen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\donki\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12587,8 +12590,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Luan Van\\ShopMobile\\ModelClassLibrary\\ModelClassLibrary.csproj": {
-              "projectPath": "C:\\Luan Van\\ShopMobile\\ModelClassLibrary\\ModelClassLibrary.csproj"
+            "F:\\ASP.NET\\MrHen\\ShopMobile\\ModelClassLibrary\\ModelClassLibrary.csproj": {
+              "projectPath": "F:\\ASP.NET\\MrHen\\ShopMobile\\ModelClassLibrary\\ModelClassLibrary.csproj"
             }
           }
         }

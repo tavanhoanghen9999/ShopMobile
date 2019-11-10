@@ -1,73 +1,224 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - WebSiteClient</title>
+    <link rel="stylesheet" type="text/css" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/css/user/_layout.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/bootstrap/fonts/font-awesome.min.css">
 
-    <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-    </environment>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    @RenderSection("Css", required: false)
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">WebSiteClient</a>
+
+    <div class="container-fluid">
+        <div class="k f-search">
+            <span class="k t t-nt-hotline">Hotline:</span>
+            <span class="k t t-hotline">0969.696.696</span>
+
+            <div class="f-lg-lu" id="h-f-sh-lg">
+                <span class="k t t-lg" data-toggle="modal" data-target="#modalLogin">Đăng nhập</span>
+                <span class="k t t-lg">&</span>
+                <span class="k t t-lg" data-toggle="modal" data-target="#modalSignIn">Đăng ký</span>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                </ul>
+            <div class="f-user-af-lg" id="f-user-af-lg">
+                <div class="img-avt-us"></div>
+                <span class="t-hl" id="h-t-name-user"></span>
+            </div>
+
+            <form class="search_form" action="/search" method="get" role="search">
+                <input type="text" class="form-control" name="query" value="" autocomplete="off" placeholder="Tìm sản phẩm">
+                <button class="btn-search" type="submit"><i class="fa fa-search h-icon-fa"></i></button>
+            </form>
+        </div>
+        <div class="k f-head">
+            <a href="/"><div class="k logo"></div></a>
+            <div class="k bd-menu">
+                <div class="k main-menu">
+                    <ul class="k main-menu">
+                        <li class="k item-mn">
+                            <a class="t-link" href="/">
+                                <i class="fa fa-home h-icon-fa"></i>
+                                Trang chủ
+                            </a>
+                        </li>
+                        <li class="k item-mn list-product">
+                            <a href="/home" class="t-link">
+                                <i class="fa fa-birthday-cake h-icon-fa"></i>
+                                Sản phẩm
+                            </a>
+                            <ul class="list-unstyled">
+                                <li class="f-it-lv2"><span class="t item-lv2" onclick="gotoTab('tab-first-prd')">Món ăn nổi bật</span></li>
+                                @*<li>
+                                        <a href="/mon-an-ua-chuong">Món ăn ưa chuộng</a>
+                                        <i class="fa fa-angle-right h-icon-fa" aria-hidden="true"></i>
+                                        <ul class="list-unstyled menu_child_2">
+                                            <li>
+                                                <a href="/tra">Trà</a>
+                                            </li>
+                                            <li>
+                                                <a href="/banh">Bánh</a>
+                                            </li>
+                                        </ul>
+                                    </li>*@
+                                <li class="f-it-lv2"><a class="t item-lv2" onclick="gotoTab('second-tab-prd')">Món được yêu thích</a></li>
+                                <li class="f-it-lv2"><a class="t item-lv2" onclick="gotoTab('third-tab-prd')">Món ăn mới</a></li>
+                            </ul>
+                        </li>
+                        <li class="k item-mn">
+                            <a class="t-link" href="/home/about">
+                                <i class="fa fa-info-circle h-icon-fa"></i>
+                                Giới thiệu
+                            </a>
+                        </li>
+                        <li class="k item-mn">
+                            <a class="t-link" href="/home/contact">
+                                <i class="fa fa-phone h-icon-fa"></i>
+                                Liên hệ
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a href="/order/checkout">
+                <div class="k f-cart">
+                    <div class="k bd-tt-cart">
+                        <span class="tt_pdt"></span>
+                        <i class="shopping-bag"></i>
+                    </div>
+                    <span class="k bd-note-cart">
+                        <span class="k t t-cart2">GIỎ HÀNG</span>
+                        @*<span class="k t t-count_item">(0) Sản phẩm</span>*@
+                    </span>
+                </div>
+            </a>
+            <div class="bootbox-cart">
+                <i style="content:none" class="fa fa-check-circle ic-check" aria-hidden="true"></i>
+                <span class="k t-add-t-cart-s">Thêm vào giỏ hàng thành công</span>
+                <i class="fa fa-times-circle ic-cancel" onclick="closeBootBox()" aria-hidden="true"></i>
+                <span class="k bnt-view-cart-and-pay" onclick="gotoCheckout()">Xem giỏ hàng và thanh toán</span>
+            </div>
+            <div class="k ic_bt_head"></div>
+        </div>
+
+        @*form login*@
+        <div class="modal fade" id="modalLogin" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Đăng nhập</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="k lg-f-hd-it">
+                            <span class="k  lg-t-email">Email:</span>
+                            <input class="k lg-inp-email" id="lg-inp-email" type="text" />
+                        </div>
+                        <div class="k lg-f-hd-it">
+                            <span class="k  lg-t-email" id="lg-t-pass">Mật khẩu:</span>
+                            <input class="k lg-inp-email" id="lg-inp-pass" type="password" />
+                        </div>
+                        <span class="k bnt_lg-login" onclick="login()">Đăng nhập</span>
+                        <span class="k gt_lg-sign" onclick="showFormSignIn()">hoặc đăng kí tài khoản</span>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </nav>
 
-    <partial name="_CookieConsentPartial" />
+        @*Form  sigin*@
+        <div class="modal fade" id="modalSignIn" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Đăng kí tài khoản</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="k lg-f-hd-it">
+                            <span class="k  lg-t-email">Email:</span>
+                            <input class="k lg-inp-email" id="signin-input" type="text" />
+                        </div>
+                        <div class="k lg-f-hd-it">
+                            <span class="k  lg-t-email">Mật khẩu:</span>
+                            <input class="k lg-inp-email" id="pass-input" type="password" />
+                        </div>
+                        <div class="k lg-f-hd-it">
+                            <span class="k  lg-t-email">Nhập lại mật khẩu:</span>
+                            <input class="k lg-inp-email" id="passconf-input" type="password" />
+                        </div>
+                        <span class="k bnt_lg-login">Đăng kí</span>
+                        <span class="k gt_lg-sign" onclick="showFormLogin()">về trang đăng nhập</span>
+                    </div>
+                </div>
 
-    <div class="container body-content">
+            </div>
+        </div>
+
         @RenderBody()
-        <hr />
         <footer>
-            <p>&copy; 2019 - WebSiteClient</p>
+            <div class="k f-ft">
+                <div class="k it-f-ft">
+                    <span class="k t tt-ft">LIÊN HỆ</span>
+                    <div class="k f-dt-ft">
+                        <i class="fa fa-map-marker h-icon-fa" aria-hidden="true"></i>
+                        <span class="k t t-inf">Km17, QL 27 Cưkuin Đắk Lắk</span>
+                    </div>
+                    <div class="k f-dt-ft">
+                        <i class="fa fa-phone h-icon-fa" aria-hidden="true"></i>
+                        <span class="k t t-inf">0983.975.408</span>
+                        <span class="k t t-inf"> Thứ 2- Chủ Nhật : 8h-23h</span>
+                    </div>
+                    <div class="k f-dt-ft">
+                        <i class="fa fa-envelope h-icon-fa" aria-hidden="true"></i>
+                        <span class="k t t-inf">khanhnv@hcmute.edu.vn</span>
+                    </div>
+                </div>
+                <div class="k it-f-ft">
+                    <span class="k t tt-ft">HỖ TRỢ KHÁCH HÀNG</span>
+                    <div class="k f-dt-ft">
+                        <span class="k t t-inf-cus">Trang chủ</span>
+                    </div>
+                    <div class="k f-dt-ft">
+                        <span class="k t t-inf-cus">Sản phẩm</span>
+                    </div>
+                    <div class="k f-dt-ft">
+                        <span class="k t t-inf-cus">Giới thiệu</span>
+                    </div>
+                    <div class="k f-dt-ft">
+                        <span class="k t t-inf-cus">Liên hệ</span>
+                    </div>
+                </div>
+                <div class="k it-f-ft">
+                    <span class="k t tt-ft">CHÍNH SÁCH MUA HÀNG</span>
+                    <div class="k f-dt-ft">
+                        <span class="k t t-inf-cus">Khiếu nại</span>
+                    </div>
+                    <div class="k f-dt-ft">
+                        <span class="k t t-inf-cus">Đổi trả</span>
+                    </div>
+                </div>
+                <div class="k it-f-ft">
+                    <span class="k t tt-ft">ĐĂNG KÍ NHẬN TIN</span>
+                    <div class="k f-dt-ft">
+                        <span class="k t t-inf">Đăng kí nhận thông tin khuyển mãi và món ăn mới</span>
+                        <input class="form-email" type="email" id="email-customer" placeholder="Email của bạn">
+                        <span class="k bnt_submit" onclick="registerEmail()">ĐĂNG KÝ</span>
+                    </div>
+                </div>
+            </div>
         </footer>
     </div>
+    <script src="~/lib/jquery/dist/jquery.min.3.3.1.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
 
-    <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
-        </script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                crossorigin="anonymous"
-                integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd">
-        </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
-    </environment>
+    <script src="~/lib/jquery/moment.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap-datetimepicker.js"></script>
+    <script src="~/lib/js/bootbox.min.js"></script>
+    <script src="~/js/user/userhelper.js"></script>
 
     @RenderSection("Scripts", required: false)
 </body>

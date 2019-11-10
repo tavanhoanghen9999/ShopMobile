@@ -29,7 +29,7 @@ namespace WebSiteClient.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult DetailProduct()
         {
             return View();
         }

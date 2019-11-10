@@ -12542,23 +12542,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tahen\\.nuget\\packages\\": {},
+    "C:\\Users\\donki\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Luan Van\\ShopMobile\\WebSiteClient\\WebSiteClient.csproj",
+      "projectUniqueName": "F:\\ASP.NET\\MrHen\\ShopMobile\\WebSiteClient\\WebSiteClient.csproj",
       "projectName": "WebSiteClient",
-      "projectPath": "C:\\Luan Van\\ShopMobile\\WebSiteClient\\WebSiteClient.csproj",
-      "packagesPath": "C:\\Users\\tahen\\.nuget\\packages\\",
-      "outputPath": "C:\\Luan Van\\ShopMobile\\WebSiteClient\\obj\\",
+      "projectPath": "F:\\ASP.NET\\MrHen\\ShopMobile\\WebSiteClient\\WebSiteClient.csproj",
+      "packagesPath": "C:\\Users\\donki\\.nuget\\packages\\",
+      "outputPath": "F:\\ASP.NET\\MrHen\\ShopMobile\\WebSiteClient\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\tahen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\donki\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

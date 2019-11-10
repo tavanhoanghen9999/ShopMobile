@@ -16,9 +16,6 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\img\lineproduct\" />
-    <Folder Include="wwwroot\img\customer\" />
-    <Folder Include="wwwroot\img\supplier\" />
-    <Folder Include="wwwroot\img\product\" />
   </ItemGroup>
 
 </Project>
